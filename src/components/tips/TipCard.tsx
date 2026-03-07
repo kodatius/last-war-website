@@ -1,6 +1,7 @@
 import CategoryBadge from '@/components/ui/CategoryBadge';
 import Card from '@/components/ui/Card';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import { Tip } from '@/types';
 
 interface TipCardProps {
@@ -36,16 +37,16 @@ function getTipImage(tip: Tip): { src: string; alt: string } | null {
   const normalized = tip.text.toLowerCase();
 
   if (tip.category === 'Resources') {
-    if (normalized.includes('iron')) return { src: '/images/ui/iron.png', alt: 'Iron resource' };
-    if (normalized.includes('food')) return { src: '/images/ui/food.png', alt: 'Food resource' };
-    if (normalized.includes('gold') || normalized.includes('coin')) return { src: '/images/ui/coin.png', alt: 'Coin resource' };
-    return { src: '/images/ui/diamond.png', alt: 'Diamond resource' };
+    if (normalized.includes('iron')) return { src: img('/images/ui/iron.png'), alt: 'Iron resource' };
+    if (normalized.includes('food')) return { src: img('/images/ui/food.png'), alt: 'Food resource' };
+    if (normalized.includes('gold') || normalized.includes('coin')) return { src: img('/images/ui/coin.png'), alt: 'Coin resource' };
+    return { src: img('/images/ui/diamond.png'), alt: 'Diamond resource' };
   }
 
   if (tip.category === 'Heroes') {
     const foundHero = heroIds.find((heroId) => normalized.includes(heroId));
-    if (foundHero) return { src: `/images/heroes/${foundHero}.png`, alt: `${foundHero} portrait` };
-    return { src: '/images/heroes/kimberly.png', alt: 'Featured hero portrait' };
+    if (foundHero) return { src: img(`/images/heroes/${foundHero}.png`), alt: `${foundHero} portrait` };
+    return { src: img('/images/heroes/kimberly.png'), alt: 'Featured hero portrait' };
   }
 
   return null;

@@ -2,6 +2,7 @@
 
 import { ALLIANCE_INFO } from '@/lib/constants';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import Cookies from 'js-cookie';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FormEvent, ReactNode, useEffect, useMemo, useState } from 'react';
@@ -66,7 +67,7 @@ export default function PasswordGate({ children }: PasswordGateProps) {
             >
               <div className="inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-tertiary">
                 <LocalImage
-                  src="/last-war-website/images/ui/logo.png"
+                  src={img('/images/ui/logo.png')}
                   alt="Last War logo"
                   width={48}
                   height={48}

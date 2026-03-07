@@ -1,5 +1,6 @@
 import Card from '@/components/ui/Card';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 
 interface FormationCardProps {
   name: string;
@@ -22,7 +23,7 @@ export default function FormationCard({ name, heroes, description }: FormationCa
           <div key={`${hero}-${index}`} className="rounded-md border border-border bg-bg-tertiary p-2 text-center">
             <p className="text-[10px] uppercase text-text-secondary">{slotLabels[index]}</p>
             <LocalImage
-              src={`/images/heroes/${heroNameToId(hero)}.png`}
+              src={img(`/images/heroes/${heroNameToId(hero)}.png`)}
               alt={hero}
               width={72}
               height={72}

@@ -3,6 +3,7 @@
 import LocalImage from '@/components/ui/LocalImage';
 import ExpandableCard from '@/components/ui/ExpandableCard';
 import FrequencyBadge from '@/components/ui/FrequencyBadge';
+import { img } from '@/lib/prefix';
 import { GameEvent } from '@/types';
 import EventDetail from './EventDetail';
 
@@ -11,10 +12,10 @@ interface EventCardProps {
 }
 
 function getEventIconPath(event: GameEvent): string {
-  if (event.id.includes('zombie') || event.id.includes('doom')) return '/images/ui/damage.png';
-  if (event.id.includes('alliance') || event.id.includes('arms') || event.id.includes('warzone')) return '/images/ui/tank-role.png';
-  if (event.id.includes('wanted') || event.id.includes('trial') || event.id.includes('campaign')) return '/images/ui/buff.png';
-  return '/images/ui/coin.png';
+  if (event.id.includes('zombie') || event.id.includes('doom')) return img('/images/ui/damage.png');
+  if (event.id.includes('alliance') || event.id.includes('arms') || event.id.includes('warzone')) return img('/images/ui/tank-role.png');
+  if (event.id.includes('wanted') || event.id.includes('trial') || event.id.includes('campaign')) return img('/images/ui/buff.png');
+  return img('/images/ui/coin.png');
 }
 
 export default function EventCard({ event }: EventCardProps) {

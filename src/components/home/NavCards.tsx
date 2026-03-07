@@ -1,5 +1,6 @@
 import Card from '@/components/ui/Card';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import { BookOpen, Brain, CalendarClock, Layers3, ShieldAlert, Swords } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,7 +25,7 @@ export default function NavCards() {
                 <div className="flex items-center justify-between gap-3">
                   <Icon className="text-accent" size={22} />
                   <LocalImage
-                    src={`/images/heroes/${card.heroId}.png`}
+                    src={img(`/images/heroes/${card.heroId}.png`)}
                     alt={`${card.title} featured hero`}
                     width={48}
                     height={48}

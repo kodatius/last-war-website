@@ -1,4 +1,5 @@
 import type { QuizQuestion } from '@/types';
+import { img } from '@/lib/prefix';
 import {
   DIFFICULTY_POINTS,
   QUIZ_QUESTIONS,
@@ -7,14 +8,14 @@ import {
 
 function getQuestionImage(questionId: string, category: string): { src: string; alt: string } | null {
   if (category === 'heroes') {
-    if (questionId === 'h3') return { src: '/images/heroes/murphy.png', alt: 'Murphy portrait' };
-    if (questionId === 'h7') return { src: '/images/heroes/carlie.png', alt: 'Carlie portrait' };
-    return { src: '/images/heroes/kimberly.png', alt: 'Hero portrait' };
+    if (questionId === 'h3') return { src: img('/images/heroes/murphy.png'), alt: 'Murphy portrait' };
+    if (questionId === 'h7') return { src: img('/images/heroes/carlie.png'), alt: 'Carlie portrait' };
+    return { src: img('/images/heroes/kimberly.png'), alt: 'Hero portrait' };
   }
 
   if (category === 'events') {
-    if (questionId === 'e2') return { src: '/images/banners/game.jpg', alt: 'Gameplay event scene' };
-    return { src: '/images/banners/map.png', alt: 'Event map' };
+    if (questionId === 'e2') return { src: img('/images/banners/game.jpg'), alt: 'Gameplay event scene' };
+    return { src: img('/images/banners/map.png'), alt: 'Event map' };
   }
 
   return null;

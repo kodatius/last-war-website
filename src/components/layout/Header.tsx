@@ -2,6 +2,7 @@
 
 import { NAV_LINKS } from '@/lib/constants';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
@@ -18,7 +19,7 @@ export default function Header() {
       <div className="container-shell flex h-16 items-center justify-between">
         <Link href="/" className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-accent">
           <LocalImage
-            src="/last-war-website/images/ui/logo.png"
+            src={img('/images/ui/logo.png')}
             alt="Last War Survival logo"
             width={36}
             height={36}

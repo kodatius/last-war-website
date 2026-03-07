@@ -1,6 +1,7 @@
 import DiscordButton from '@/components/ui/DiscordButton';
 import LocalImage from '@/components/ui/LocalImage';
 import SectionHeading from '@/components/ui/SectionHeading';
+import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function AboutPage() {
       <SectionHeading title="About [ViKF]" subtitle="Private strategy base for Server #2058." />
       <div className="mb-6 overflow-hidden rounded-xl border border-border bg-bg-secondary">
         <LocalImage
-          src="/last-war-website/images/banners/map.png"
+          src={img('/images/banners/map.png')}
           alt="Server strategy map"
           width={1024}
           height={558}
@@ -52,7 +53,7 @@ export default function AboutPage() {
       <div className="space-y-6 rounded-lg border border-border bg-bg-secondary p-6 text-text-secondary">
         <div className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-tertiary">
           <LocalImage
-            src="/last-war-website/images/ui/logo.png"
+            src={img('/images/ui/logo.png')}
             alt="Last War logo"
             width={56}
             height={56}
@@ -76,7 +77,7 @@ export default function AboutPage() {
           {aboutHeroIds.map((heroId) => (
             <LocalImage
               key={heroId}
-              src={`/images/heroes/${heroId}.png`}
+              src={img(`/images/heroes/${heroId}.png`)}
               alt={`${heroId} portrait`}
               width={80}
               height={80}

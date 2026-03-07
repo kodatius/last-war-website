@@ -1,6 +1,7 @@
 'use client';
 
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import { motion } from 'framer-motion';
 
 export default function TypeTriangle() {
@@ -17,7 +18,7 @@ export default function TypeTriangle() {
 
       <div className="absolute left-1/2 top-4 h-16 w-16 -translate-x-1/2 rounded-full border border-border bg-bg-tertiary p-3 text-center">
         <LocalImage
-          src="/last-war-website/images/ui/tank.png"
+          src={img('/images/ui/tank.png')}
           alt="Tank type"
           width={40}
           height={40}
@@ -30,7 +31,7 @@ export default function TypeTriangle() {
 
       <div className="absolute bottom-4 left-4 h-16 w-16 rounded-full border border-border bg-bg-tertiary p-3 text-center">
         <LocalImage
-          src="/last-war-website/images/ui/aircraft.png"
+          src={img('/images/ui/aircraft.png')}
           alt="Aircraft type"
           width={40}
           height={40}
@@ -43,7 +44,7 @@ export default function TypeTriangle() {
 
       <div className="absolute bottom-4 right-4 h-16 w-16 rounded-full border border-border bg-bg-tertiary p-3 text-center">
         <LocalImage
-          src="/last-war-website/images/ui/missile.png"
+          src={img('/images/ui/missile.png')}
           alt="Missile type"
           width={40}
           height={40}

@@ -1,5 +1,6 @@
 import { LINKS } from '@/lib/constants';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <p>Built for [ViKF] | Server #2058</p>
         <div className="flex flex-wrap items-center gap-2">
           <LocalImage
-            src="/last-war-website/images/ui/iron.png"
+            src={img('/images/ui/iron.png')}
             alt="Iron"
             width={18}
             height={18}
@@ -16,7 +17,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <LocalImage
-            src="/last-war-website/images/ui/food.png"
+            src={img('/images/ui/food.png')}
             alt="Food"
             width={18}
             height={18}
@@ -24,7 +25,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <LocalImage
-            src="/last-war-website/images/ui/coin.png"
+            src={img('/images/ui/coin.png')}
             alt="Coin"
             width={18}
             height={18}
@@ -32,7 +33,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <LocalImage
-            src="/last-war-website/images/ui/diamond.png"
+            src={img('/images/ui/diamond.png')}
             alt="Diamond"
             width={18}
             height={18}

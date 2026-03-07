@@ -1,5 +1,6 @@
 import Card from '@/components/ui/Card';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import { Term } from '@/types';
 
 interface TermCardProps {
@@ -9,13 +10,13 @@ interface TermCardProps {
 function getTermIcon(term: Term): { src: string; alt: string } | null {
   const corpus = `${term.term} ${term.aliases.join(' ')} ${term.definition}`.toLowerCase();
 
-  if (corpus.includes('tank')) return { src: '/images/ui/tank.png', alt: 'Tank type' };
-  if (corpus.includes('aircraft')) return { src: '/images/ui/aircraft.png', alt: 'Aircraft type' };
-  if (corpus.includes('missile')) return { src: '/images/ui/missile.png', alt: 'Missile type' };
-  if (corpus.includes('iron')) return { src: '/images/ui/iron.png', alt: 'Iron resource' };
-  if (corpus.includes('food')) return { src: '/images/ui/food.png', alt: 'Food resource' };
-  if (corpus.includes('gold') || corpus.includes('coin')) return { src: '/images/ui/coin.png', alt: 'Coin resource' };
-  if (corpus.includes('diamond')) return { src: '/images/ui/diamond.png', alt: 'Diamond resource' };
+  if (corpus.includes('tank')) return { src: img('/images/ui/tank.png'), alt: 'Tank type' };
+  if (corpus.includes('aircraft')) return { src: img('/images/ui/aircraft.png'), alt: 'Aircraft type' };
+  if (corpus.includes('missile')) return { src: img('/images/ui/missile.png'), alt: 'Missile type' };
+  if (corpus.includes('iron')) return { src: img('/images/ui/iron.png'), alt: 'Iron resource' };
+  if (corpus.includes('food')) return { src: img('/images/ui/food.png'), alt: 'Food resource' };
+  if (corpus.includes('gold') || corpus.includes('coin')) return { src: img('/images/ui/coin.png'), alt: 'Coin resource' };
+  if (corpus.includes('diamond')) return { src: img('/images/ui/diamond.png'), alt: 'Diamond resource' };
   return null;
 }
 

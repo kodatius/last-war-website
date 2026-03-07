@@ -1,5 +1,6 @@
 import { TYPE_COLORS } from '@/lib/constants';
 import LocalImage from '@/components/ui/LocalImage';
+import { img } from '@/lib/prefix';
 import { cn } from '@/lib/utils';
 import { HeroType } from '@/types';
 
@@ -8,7 +9,7 @@ interface TypeIconProps {
 }
 
 export default function TypeIcon({ type }: TypeIconProps) {
-  const iconSrc = type === 'Tank' ? '/images/ui/tank.png' : type === 'Aircraft' ? '/images/ui/aircraft.png' : '/images/ui/missile.png';
+  const iconSrc = type === 'Tank' ? img('/images/ui/tank.png') : type === 'Aircraft' ? img('/images/ui/aircraft.png') : img('/images/ui/missile.png');
 
   return (
     <span className={cn('inline-flex items-center gap-1 text-xs font-medium', TYPE_COLORS[type])}>

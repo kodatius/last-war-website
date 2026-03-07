@@ -3,6 +3,7 @@ import LocalImage from '@/components/ui/LocalImage';
 import WeeklyCalendar from '@/components/events/WeeklyCalendar';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { events } from '@/data/events-data';
+import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default function EventsPage() {
     <div className="container-shell py-16 sm:py-24">
       <div className="mb-8 overflow-hidden rounded-xl border border-border bg-bg-secondary">
         <LocalImage
-          src="/last-war-website/images/banners/map.png"
+          src={img('/images/banners/map.png')}
           alt="Event war map"
           width={1024}
           height={558}

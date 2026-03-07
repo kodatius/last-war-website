@@ -1,4 +1,5 @@
 import { Difficulty, EventFrequency, HeroType, Rarity, Tier } from '@/types';
+import { img } from '@/lib/prefix';
 
 export const ALLIANCE_INFO = {
   name: '[ViKF]',
@@ -12,7 +13,7 @@ export const ALLIANCE_INFO = {
 
 export const LINKS = {
   discord: 'https://discord.gg/S4m3mmzuKZ',
-  heroImageBase: '/images/heroes',
+  heroImageBase: img('/images/heroes'),
 } as const;
 
 export const NAV_LINKS = [
