@@ -1,0 +1,36 @@
+import PasswordGate from '@/components/gate/PasswordGate';
+import LayoutShell from '@/components/layout/LayoutShell';
+import '@/styles/globals.css';
+import type { Metadata } from 'next';
+import { Inter, Rajdhani } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const rajdhani = Rajdhani({ subsets: ['latin'], variable: '--font-rajdhani', weight: ['700'] });
+
+export const metadata: Metadata = {
+  title: {
+    default: '[ViKF] Alliance',
+    template: '%s | [ViKF] Alliance',
+  },
+  description: 'Private strategy HQ for [ViKF] alliance on Server #2058.',
+  openGraph: {
+    title: '[ViKF] Alliance',
+    description: 'Static strategy base for heroes, events, squads, tips, glossary, and quizzes.',
+    images: ['/og-image.png'],
+  },
+  other: {
+    'theme-color': '#0a0a0f',
+  },
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" className={`${inter.variable} ${rajdhani.variable}`}>
+      <body>
+        <PasswordGate>
+          <LayoutShell>{children}</LayoutShell>
+        </PasswordGate>
+      </body>
+    </html>
+  );
+}
