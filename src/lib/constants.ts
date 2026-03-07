@@ -12,8 +12,7 @@ export const ALLIANCE_INFO = {
 
 export const LINKS = {
   discord: 'https://discord.gg/S4m3mmzuKZ',
-  heroImageBase:
-    'https://raw.githubusercontent.com/kodatius/last-war-companion-bot/main/images/heroes',
+  heroImageBase: '/images/heroes',
 } as const;
 
 export const NAV_LINKS = [

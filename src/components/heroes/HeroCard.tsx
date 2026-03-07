@@ -3,10 +3,11 @@
 import RarityBadge from '@/components/ui/RarityBadge';
 import TierBadge from '@/components/ui/TierBadge';
 import TypeIcon from '@/components/ui/TypeIcon';
+import LocalImage from '@/components/ui/LocalImage';
 import { LINKS } from '@/lib/constants';
 import { Hero } from '@/types';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 interface HeroCardProps {
   hero: Hero;
@@ -17,37 +18,20 @@ type HeroTab = 'pvp' | 'pve' | 'events';
 export default function HeroCard({ hero }: HeroCardProps) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<HeroTab>('pvp');
-  const [imageError, setImageError] = useState(false);
-
-  const initials = useMemo(
-    () =>
-      hero.name
-        .split(' ')
-        .map((part) => part[0])
-        .join('')
-        .slice(0, 2)
-        .toUpperCase(),
-    [hero.name]
-  );
 
   return (
     <motion.article layout className="rounded-lg border border-border bg-bg-secondary p-4">
       <button type="button" className="w-full text-left" onClick={() => setOpen((prev) => !prev)}>
-        <div className="mb-3 h-36 overflow-hidden rounded-lg border border-border bg-bg-tertiary">
-          {imageError ? (
-            <div className="flex h-full items-center justify-center bg-gradient-to-r from-accent/30 to-transparent text-3xl font-bold text-accent">
-              {initials}
-            </div>
-          ) : (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={`${LINKS.heroImageBase}/${hero.id}.png`}
-              alt={hero.name}
-              className="h-full w-full object-cover"
-              onError={() => setImageError(true)}
-            />
-          )}
-        </div>
+        <LocalImage
+          src={`${LINKS.heroImageBase}/${hero.id}.png`}
+          alt={hero.name}
+          width={340}
+          height={220}
+          containerClassName="mb-3 h-36 overflow-hidden rounded-lg border border-border bg-bg-tertiary"
+          className="h-full w-full object-cover"
+          fallbackClassName="text-3xl"
+          fallbackText={hero.name.slice(0, 2).toUpperCase()}
+        />
 
         <h3 className="text-lg font-semibold">{hero.name}</h3>
         <div className="mt-2 flex flex-wrap items-center gap-2">

@@ -1,6 +1,7 @@
 'use client';
 
 import { ALLIANCE_INFO } from '@/lib/constants';
+import LocalImage from '@/components/ui/LocalImage';
 import Cookies from 'js-cookie';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FormEvent, ReactNode, useEffect, useMemo, useState } from 'react';
@@ -47,13 +48,12 @@ export default function PasswordGate({ children }: PasswordGateProps) {
     );
   }
 
-  return (
-    <>
-      {children}
+  if (!verified) {
+    return (
       <AnimatePresence>
         {gateVisible ? (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-primary/95 p-4"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-primary p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -64,7 +64,19 @@ export default function PasswordGate({ children }: PasswordGateProps) {
               animate={showError ? { x: [0, -10, 10, -6, 6, 0] } : { x: 0 }}
               transition={{ duration: 0.35 }}
             >
-              <p className="text-sm text-text-secondary">Alliance access required</p>
+              <div className="inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-tertiary">
+                <LocalImage
+                  src="/images/ui/logo.png"
+                  alt="Last War logo"
+                  width={48}
+                  height={48}
+                  loading="eager"
+                  className="h-full w-full object-cover"
+                  containerClassName="h-full w-full"
+                  fallbackText="LW"
+                />
+              </div>
+              <p className="mt-4 text-sm text-text-secondary">Alliance access required</p>
               <h1 className="mt-2 text-3xl font-bold text-accent">[ViKF] Command Gate</h1>
               <p className="mt-2 text-sm text-text-secondary">Enter alliance password to continue.</p>
 
@@ -93,6 +105,8 @@ export default function PasswordGate({ children }: PasswordGateProps) {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </>
-  );
+    );
+  }
+
+  return <>{children}</>;
 }

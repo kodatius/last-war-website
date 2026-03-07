@@ -1,4 +1,5 @@
 import DifficultyBadge from '@/components/ui/DifficultyBadge';
+import LocalImage from '@/components/ui/LocalImage';
 import { QuizQuestion } from '@/types';
 
 interface QuestionCardProps {
@@ -17,6 +18,17 @@ export default function QuestionCard({ question, selected, onSelect, onNext }: Q
         <DifficultyBadge difficulty={question.difficulty} />
         <span className="text-xs text-text-secondary">{question.points} pts</span>
       </div>
+      {question.imageSrc ? (
+        <LocalImage
+          src={question.imageSrc}
+          alt={question.imageAlt ?? 'Question image'}
+          width={960}
+          height={420}
+          containerClassName="mt-4 h-36 overflow-hidden rounded-lg border border-border bg-bg-tertiary sm:h-44"
+          className="h-full w-full object-cover"
+          fallbackText="Quiz image"
+        />
+      ) : null}
       <h2 className="mt-4 text-xl font-semibold">{question.question}</h2>
       <div className="mt-5 space-y-2">
         {question.options.map((option, index) => {

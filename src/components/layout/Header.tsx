@@ -1,6 +1,7 @@
 'use client';
 
 import { NAV_LINKS } from '@/lib/constants';
+import LocalImage from '@/components/ui/LocalImage';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
@@ -15,8 +16,18 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-gray-950/80 backdrop-blur-md">
       <div className="container-shell flex h-16 items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight text-accent">
-          [ViKF]
+        <Link href="/" className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-accent">
+          <LocalImage
+            src="/images/ui/logo.png"
+            alt="Last War Survival logo"
+            width={36}
+            height={36}
+            loading="eager"
+            containerClassName="h-9 w-9 overflow-hidden rounded-md border border-border bg-bg-tertiary"
+            className="h-full w-full object-cover"
+            fallbackText="LW"
+          />
+          <span>[ViKF]</span>
         </Link>
 
         <nav className="hidden items-center gap-5 md:flex">

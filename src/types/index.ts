@@ -61,4 +61,6 @@ export interface QuizQuestion {
   explanation: string;
   difficulty: Difficulty;
   points: number;
+  imageSrc?: string;
+  imageAlt?: string;
 }
