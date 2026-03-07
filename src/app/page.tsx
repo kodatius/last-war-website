@@ -1,9 +1,9 @@
+import AllianceDashboard from '@/components/home/AllianceDashboard';
 import HeroBanner from '@/components/home/HeroBanner';
+import HeroSpotlight from '@/components/home/HeroSpotlight';
 import NavCards from '@/components/home/NavCards';
 import StatsBar from '@/components/home/StatsBar';
 import TipOfTheDay from '@/components/home/TipOfTheDay';
-import LocalImage from '@/components/ui/LocalImage';
-import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,24 +13,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <div className="space-y-6">
       <HeroBanner />
       <StatsBar />
-      <section className="container-shell py-10 sm:py-14">
-        <div className="overflow-hidden rounded-xl border border-border bg-bg-secondary">
-          <LocalImage
-            src={img('/images/banners/map.png')}
-            alt="World map tactical view"
-            width={1024}
-            height={558}
-            containerClassName="h-[220px] sm:h-[320px]"
-            className="h-full w-full object-cover"
-            fallbackText="World map"
-          />
-        </div>
-      </section>
+      <AllianceDashboard />
       <NavCards />
-      <TipOfTheDay />
-    </>
+      <section className="grid gap-4 pb-12 sm:pb-16 lg:grid-cols-2">
+        <TipOfTheDay />
+        <HeroSpotlight />
+      </section>
+    </div>
   );
 }

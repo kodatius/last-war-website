@@ -1,37 +1,36 @@
 import type { Hero } from '@/types';
-import { heroes as rawHeroes } from './raw/heroes-data';
+import { heroesEnhanced as rawHeroes } from './raw/heroes-enhanced';
 
-const adaptedHeroes: Hero[] = rawHeroes.map((hero) => ({
+export const heroes: Hero[] = rawHeroes.map((hero) => ({
   id: hero.id,
   name: hero.name,
+  title: hero.title,
   type: hero.type,
   rarity: hero.rarity,
   tier: hero.tier,
+  role: hero.role,
+  isMeta: hero.isMeta,
   whyGood: hero.whyGood,
-  bestPairings: hero.bestPairings,
-  usageTips: hero.usageTips,
-  recommendedGear: `${hero.recommendedGear.weapon} | ${hero.recommendedGear.armor} | ${hero.recommendedGear.accessory}`,
+  bestPairings: hero.bestSquadWith,
+  usageTips: {
+    pvp: hero.pvpTips,
+    pve: hero.pveTips,
+    events: `Best in ${hero.type} event rotations. Prioritize when running ${hero.tags.includes('meta') ? 'meta' : 'specialized'} squads.`,
+  },
+  recommendedGear: {
+    weapon: hero.role === 'Defender' ? 'Armor-first defensive weapon setup' : 'Cannon-first damage setup',
+    armor: hero.role === 'Defender' ? 'Armor to 5★ before accessories' : 'Armor after weapon core upgrades',
+    accessory: 'Chip + Radar with role-tuned substats',
+  },
+  skills: hero.skills,
+  stats: hero.stats,
+  strongAgainst: hero.strongAgainst,
+  weakAgainst: hero.weakAgainst,
+  tags: hero.tags,
+  obtainMethod: hero.obtainMethod,
+  exclusiveWeapon: hero.exclusiveWeapon,
 }));
 
-// Included to satisfy the 23-hero requirement with a real in-game hero referenced in source tips/quiz data.
-const natalia: Hero = {
-  id: 'natalia',
-  name: 'Natalia',
-  type: 'Tank',
-  rarity: 'SSR',
-  tier: 'B',
-  whyGood:
-    'Farmable early-game F2P hero with reliable frontline value while you build toward UR cores.',
-  bestPairings: ['murphy', 'mason', 'monica'],
-  usageTips: {
-    pvp: 'Use as a temporary frontliner before Murphy/Williams are online.',
-    pve: 'Strong early campaign and zombie progression option for F2P accounts.',
-    events: 'Useful in early Alliance Duel rosters while farming stronger replacements.',
-  },
-  recommendedGear: 'Armor first | Basic defensive set | Chip + Radar later',
-};
-
-export const heroes: Hero[] = [...adaptedHeroes, natalia];
-
 export const heroTypes = ['Tank', 'Aircraft', 'Missile'] as const;
+export const heroRarities = ['UR', 'SSR', 'SR'] as const;
 export const heroTiers = ['SS', 'S', 'A', 'B', 'C'] as const;

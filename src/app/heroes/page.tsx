@@ -3,7 +3,7 @@ import HeroesClient from './HeroesClient';
 
 export const metadata: Metadata = {
   title: 'Heroes',
-  description: '23-hero tier list with builds, pairings, and usage tips.',
+  description: 'Hero Database with filters, table view, and detailed role breakdowns.',
 };
 
 export default function HeroesPage() {
