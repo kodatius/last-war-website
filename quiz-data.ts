@@ -1,0 +1,142 @@
+// Quiz questions generated from the Last War guide
+
+export type QuizCategory = 'heroes' | 'mechanics' | 'events' | 'strategy' | 'resources' | 'alliance' | 'base' | 'gear' | 'drone';
+export type Difficulty = 'easy' | 'medium' | 'hard';
+
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctAnswer: number; // 0-3
+  difficulty: Difficulty;
+  category: QuizCategory;
+  explanation: string;
+}
+
+export const CATEGORY_NAMES: Record<QuizCategory, string> = {
+  heroes: 'Heroes',
+  mechanics: 'Game Mechanics',
+  events: 'Events',
+  strategy: 'Strategy',
+  resources: 'Resources',
+  alliance: 'Alliance',
+  base: 'Base Building',
+  gear: 'Gear',
+  drone: 'Drone'
+};
+
+export const DIFFICULTY_POINTS: Record<Difficulty, number> = {
+  easy: 1,
+  medium: 2,
+  hard: 3
+};
+
+export const QUIZ_QUESTIONS: QuizQuestion[] = [
+  // HEROES - Easy
+  { id: 'h1', question: "Which hero tier is the BEST in Last War?", options: ["SR", "SSR", "UR", "R"], correctAnswer: 2, difficulty: 'easy', category: 'heroes', explanation: "UR (Ultra Rare) heroes are the strongest. Focus resources here!" },
+  { id: 'h2', question: "How many core heroes should you focus on?", options: ["3", "5", "7", "10"], correctAnswer: 1, difficulty: 'easy', category: 'heroes', explanation: "Focus on 5 core heroes ONLY. Spreading thin costs 2-4 weeks of progression!" },
+  { id: 'h3', question: "Which hero is considered the 'gold standard' for defense?", options: ["Kimberly", "Murphy", "DVA", "Tesla"], correctAnswer: 1, difficulty: 'easy', category: 'heroes', explanation: "Murphy is the go-to defensive hero that pairs perfectly with other comps." },
+  { id: 'h4', question: "Which farmable hero is recommended for F2P players early game?", options: ["Kimberly", "DVA", "Natalia", "Marshall"], correctAnswer: 2, difficulty: 'easy', category: 'heroes', explanation: "Natalia is farmable and strong for F2P players." },
+
+  // HEROES - Medium
+  { id: 'h5', question: "What bonus do 5 same-type heroes give?", options: ["+10% all stats", "+15% all stats", "+20% all stats", "+25% all stats"], correctAnswer: 2, difficulty: 'medium', category: 'heroes', explanation: "Type bonuses are huge! 5 same-type heroes = +20% all stats." },
+  { id: 'h6', question: "When should you replace an SSR with a UR hero?", options: ["Immediately", "When UR has 1 star less than SSR", "When UR is same stars", "Never"], correctAnswer: 1, difficulty: 'medium', category: 'heroes', explanation: "Only replace SSR with UR when your UR has 1 star less than the SSR." },
+  { id: 'h7', question: "Which hero counters Kimberly/DVA energy damage?", options: ["Murphy", "Williams", "Carlie", "Marshall"], correctAnswer: 2, difficulty: 'medium', category: 'heroes', explanation: "Carlie blocks energy damage - great counter to Kim/DVA comps." },
+
+  // MECHANICS - Easy
+  { id: 'm1', question: "What is the type advantage order?", options: ["Tank > Aircraft > Missile", "Tank > Missile > Aircraft", "Aircraft > Tank > Missile", "Missile > Tank > Aircraft"], correctAnswer: 0, difficulty: 'easy', category: 'mechanics', explanation: "Tank beats Missile, Missile beats Aircraft, Aircraft beats Tank." },
+  { id: 'm2', question: "Where should your strongest tank be positioned?", options: ["Front Right", "Front Left", "Rear Left", "Rear Center"], correctAnswer: 1, difficulty: 'easy', category: 'mechanics', explanation: "Front Left takes the most damage, so put your strongest tank there." },
+  { id: 'm3', question: "Where should your strongest DPS be positioned?", options: ["Front Left", "Front Right", "Rear Left", "Rear Right"], correctAnswer: 2, difficulty: 'easy', category: 'mechanics', explanation: "Rear Left lives longest and deals most damage." },
+
+  // MECHANICS - Medium
+  { id: 'm4', question: "What percentage of enemy power do you need to deal damage?", options: ["20%", "30%", "40%", "50%"], correctAnswer: 2, difficulty: 'medium', category: 'mechanics', explanation: "Need at least 40% of enemy's power to deal damage. Below 40% = zero troop loss." },
+  { id: 'm5', question: "How do rallies actually work?", options: ["Combined power attack", "Sequential battles", "Average power attack", "Random selection"], correctAnswer: 1, difficulty: 'medium', category: 'mechanics', explanation: "Rallies are sequential - first player fights, then second, etc." },
+
+  // EVENTS - Easy
+  { id: 'e1', question: "On which days should you SAVE radar tasks?", options: ["Mon/Wed/Fri", "Sun/Tue/Thu", "Tue/Thu/Sat", "Every day"], correctAnswer: 1, difficulty: 'easy', category: 'events', explanation: "Save radar tasks on Sun/Tue/Thu, USE on Mon/Wed/Fri/Sat." },
+  { id: 'e2', question: "What is the BEST use of stamina in the game?", options: ["Doom Elite", "Zombie Invasion", "General's Trial", "Campaign"], correctAnswer: 1, difficulty: 'easy', category: 'events', explanation: "ZI is 4x more beneficial than Doom Elite!" },
+  { id: 'e3', question: "What day is 'Buster Day' (Combat Day) in Alliance Duel?", options: ["Friday", "Saturday", "Sunday", "Monday"], correctAnswer: 1, difficulty: 'easy', category: 'events', explanation: "Saturday is the big combat/buster day in Alliance Duel." },
+
+  // EVENTS - Medium
+  { id: 'e4', question: "What is 'double-dipping' in Last War?", options: ["Using 2 heroes", "Earning AD + Arms Race points simultaneously", "Training 2 troop types", "Having 2 alliances"], correctAnswer: 1, difficulty: 'medium', category: 'events', explanation: "Double-dip: Time AD activities with Arms Race phases for 2x points!" },
+  { id: 'e5', question: "How much can AD Duel Expert tech increase your points?", options: ["50%", "100%", "150%", "200%"], correctAnswer: 2, difficulty: 'medium', category: 'events', explanation: "Research all 20 levels of Duel Expert tech - up to 150% more AD points!" },
+  { id: 'e6', question: "What should you spend Courage Medals on FIRST?", options: ["Drone Parts", "Stamina", "Resources", "Speedups"], correctAnswer: 1, difficulty: 'medium', category: 'events', explanation: "Courage Medal priority: Stamina > 50 Drone Parts > other stuff." },
+
+  // STRATEGY - Easy
+  { id: 's1', question: "Should you EVER use diamonds to speed up buildings?", options: ["Yes, always", "Only for HQ", "Only emergencies", "Never"], correctAnswer: 3, difficulty: 'easy', category: 'strategy', explanation: "NEVER use diamonds to speed up buildings. EVER." },
+  { id: 's2', question: "When should you open level-tied chests?", options: ["Immediately", "HQ 10-15", "HQ 23-25", "HQ 30"], correctAnswer: 2, difficulty: 'easy', category: 'strategy', explanation: "Don't open level-tied chests until HQ 23-25. Rewards scale with level!" },
+  { id: 's3', question: "When should you join an alliance?", options: ["Day 1", "HQ 10", "HQ 15", "When strong enough"], correctAnswer: 0, difficulty: 'easy', category: 'strategy', explanation: "Join an alliance on Day 1! You'll miss 60% of content without one." },
+
+  // STRATEGY - Medium
+  { id: 's4', question: "What's better: training new troops or promoting?", options: ["Training new", "Promoting", "Same thing", "Depends on level"], correctAnswer: 1, difficulty: 'medium', category: 'strategy', explanation: "Promoting = same points but faster and cheaper!" },
+  { id: 's5', question: "Why should you keep walls EMPTY in most situations?", options: ["Saves resources", "Defending fills hospitals fast", "Better for events", "It's a bug"], correctAnswer: 1, difficulty: 'medium', category: 'strategy', explanation: "Defending fills hospitals fast! Keep walls EMPTY or use 1-hero squad." },
+  { id: 's6', question: "How can you 'skew' power for better AD matchups?", options: ["Train more troops", "Unequip gear & remove survivors", "Upgrade buildings", "Attack more"], correctAnswer: 1, difficulty: 'medium', category: 'strategy', explanation: "Before AD matchmaking on Sunday: Unequip gear, lower troops, remove survivors to drop power!" },
+
+  // RESOURCES - Easy
+  { id: 'r1', question: "How many free diamonds can you get daily from 3v3 Arena?", options: ["30", "60", "90", "120"], correctAnswer: 2, difficulty: 'easy', category: 'resources', explanation: "Click thumbs up 3 times = 30 x 3 = 90 diamonds!" },
+  { id: 'r2', question: "What resource becomes the biggest bottleneck around HQ 15?", options: ["Food", "Iron", "Gold", "Oil"], correctAnswer: 1, difficulty: 'easy', category: 'resources', explanation: "Iron becomes your biggest bottleneck around HQ 15." },
+  { id: 'r3', question: "How often does the Armed Truck appear?", options: ["Every 4 hours", "Every 8.5 hours", "Every 12 hours", "Once daily"], correctAnswer: 1, difficulty: 'easy', category: 'resources', explanation: "Armed Truck appears every 8.5 hours - don't miss it!" },
+
+  // RESOURCES - Medium
+  { id: 'r4', question: "What's the monthly F2P diamond income approximately?", options: ["3,000", "6,000", "10,000", "15,000"], correctAnswer: 1, difficulty: 'medium', category: 'resources', explanation: "Monthly F2P diamond income: ~6,000 (3k tasks, 2k events, 1k alliance)." },
+  { id: 'r5', question: "Which hero gives +25% resources from Gold Zombie events?", options: ["Murphy", "Monica", "Natalia", "Kimberly"], correctAnswer: 1, difficulty: 'medium', category: 'resources', explanation: "Deploy Monica during Gold Zombie Events for +25% resource bonus." },
+
+  // ALLIANCE - Easy
+  { id: 'a1', question: "What % of content do you miss without an alliance?", options: ["20%", "40%", "60%", "80%"], correctAnswer: 2, difficulty: 'easy', category: 'alliance', explanation: "Join an alliance on Day 1! You'll miss 60% of content without one." },
+  { id: 'a2', question: "How much faster is progression with an alliance?", options: ["10-20%", "20-30%", "40-50%", "60-70%"], correctAnswer: 2, difficulty: 'easy', category: 'alliance', explanation: "Alliance = 40-50% faster progression vs playing solo." },
+
+  // ALLIANCE - Medium
+  { id: 'a3', question: "How many diamond donations per day before diminishing returns?", options: ["2-4", "4-10", "10-15", "Unlimited"], correctAnswer: 1, difficulty: 'medium', category: 'alliance', explanation: "Donate 4-10 diamonds to alliance tech daily (diminishing returns after)." },
+  { id: 'a4', question: "What can Secretary of Interior give you daily?", options: ["1M resources", "5M resources", "10M+ resources", "50M resources"], correctAnswer: 2, difficulty: 'medium', category: 'alliance', explanation: "Secretary of Interior 3x daily can gain 10M+ extra resources!" },
+
+  // BASE - Easy
+  { id: 'b1', question: "What HQ level unlocks T10 troops?", options: ["HQ 25", "HQ 27", "HQ 30", "HQ 32"], correctAnswer: 2, difficulty: 'easy', category: 'base', explanation: "HQ 30 = T10 troops. This is THE critical milestone for most players." },
+  { id: 'b2', question: "What building should NEVER fall more than 2 levels behind HQ?", options: ["Barracks", "Tech Center", "Hospital", "Wall"], correctAnswer: 1, difficulty: 'easy', category: 'base', explanation: "Never let Tech Center fall more than 2 levels behind HQ!" },
+  { id: 'b3', question: "What HQ level unlocks the Tech Center?", options: ["HQ 5", "HQ 7", "HQ 9", "HQ 10"], correctAnswer: 1, difficulty: 'easy', category: 'base', explanation: "Tech Center unlocks at HQ 7 - place it immediately!" },
+
+  // BASE - Medium
+  { id: 'b4', question: "Which building is described as a 'TRAP that wastes resources'?", options: ["Component Factory", "Material Workshop", "Smelter", "Builder Hut"], correctAnswer: 1, difficulty: 'medium', category: 'base', explanation: "Material Workshop is a TRAP that wastes resources. Low priority!" },
+  { id: 'b5', question: "On which AD day should you 'unwrap' gift-wrapped buildings?", options: ["Monday", "Tuesday", "Wednesday", "Friday"], correctAnswer: 1, difficulty: 'medium', category: 'base', explanation: "Leave buildings 'gift wrapped' until Alliance Duel Tuesday for free points!" },
+
+  // GEAR - Medium
+  { id: 'g1', question: "What's the gear upgrade priority order?", options: ["Armor > Weapons > Chips", "Weapons > Chips > Radars > Armor", "Chips > Weapons > Armor", "Radars > Armor > Weapons"], correctAnswer: 1, difficulty: 'medium', category: 'gear', explanation: "Gear upgrade priority: WEAPONS > Chips > Radars > Armor." },
+  { id: 'g2', question: "What should you ONLY spend Honor Points on?", options: ["Hero shards", "Legendary Gear Blueprints", "Speedups", "Resources"], correctAnswer: 1, difficulty: 'medium', category: 'gear', explanation: "ONLY spend Honor Points on Legendary Gear Blueprints - they're exclusive!" },
+  { id: 'g3', question: "What's the power multiplier for 5-star Mythic gear?", options: ["1.5x", "2.0x", "2.75x", "3.0x"], correctAnswer: 2, difficulty: 'hard', category: 'gear', explanation: "5-star Mythic gear = 2.75x power multiplier vs 0-star baseline." },
+
+  // DRONE - Medium
+  { id: 'd1', question: "Below what % progress does drone upgrade have 50% crit chance?", options: ["60%", "70%", "80%", "90%"], correctAnswer: 2, difficulty: 'medium', category: 'drone', explanation: "While upgrade progress is under 80%, every tap has 50% chance to DOUBLE XP!" },
+  { id: 'd2', question: "At what Chip Lab level should you STOP upgrading?", options: ["Level 15", "Level 20", "Level 25", "Level 35"], correctAnswer: 1, difficulty: 'medium', category: 'drone', explanation: "Levels 21-35 don't unlock new chips - waste of resources!" },
+  { id: 'd3', question: "Which side drone pieces should you prioritize?", options: ["Left side", "Right side", "Top", "Bottom"], correctAnswer: 1, difficulty: 'medium', category: 'drone', explanation: "Always grab RIGHT-SIDE drone pieces: Missile, Fuel, Thermal." },
+
+  // HARD QUESTIONS
+  { id: 'x1', question: "How many UR shards needed for a hero from 0 to 5 stars?", options: ["200", "310", "410", "500"], correctAnswer: 2, difficulty: 'hard', category: 'heroes', explanation: "It takes 410 UR shards to take a hero from 0 to 5 stars." },
+  { id: 'x2', question: "What power is needed to kill one Doom Walker squad at level 150?", options: ["12.6M", "14.9M", "16.9M", "18.9M"], correctAnswer: 2, difficulty: 'hard', category: 'mechanics', explanation: "At level 150, you need approximately 16.9M power per squad." },
+  { id: 'x3', question: "How many total drone parts needed for level 250?", options: ["100,000", "125,000", "150,000+", "200,000"], correctAnswer: 2, difficulty: 'hard', category: 'drone', explanation: "You need over 150,000 drone parts to reach level 250!" },
+];
+
+// Get a deterministic "daily" question based on date
+export function getDailyQuestion(): QuizQuestion {
+  const today = new Date();
+  const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000);
+  const index = dayOfYear % QUIZ_QUESTIONS.length;
+  return QUIZ_QUESTIONS[index];
+}
+
+// Get a random question (for practice mode)
+export function getRandomQuestion(excludeId?: string): QuizQuestion {
+  let pool = QUIZ_QUESTIONS;
+  if (excludeId) {
+    pool = pool.filter(q => q.id !== excludeId);
+  }
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+// Get question by ID
+export function getQuestionById(id: string): QuizQuestion | undefined {
+  return QUIZ_QUESTIONS.find(q => q.id === id);
+}
+
+// Get points for difficulty
+export function getPointsForDifficulty(difficulty: Difficulty): number {
+  return DIFFICULTY_POINTS[difficulty];
+}
