@@ -15,7 +15,7 @@ export default function EventsPage() {
     <div className="container-shell py-16 sm:py-24">
       <div className="mb-8 overflow-hidden rounded-xl border border-border bg-bg-secondary">
         <LocalImage
-          src="/images/banners/map.png"
+          src="/last-war-website/images/banners/map.png"
           alt="Event war map"
           width={1024}
           height={558}

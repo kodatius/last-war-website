@@ -8,7 +8,7 @@ export default function Footer() {
         <p>Built for [ViKF] | Server #2058</p>
         <div className="flex flex-wrap items-center gap-2">
           <LocalImage
-            src="/images/ui/iron.png"
+            src="/last-war-website/images/ui/iron.png"
             alt="Iron"
             width={18}
             height={18}
@@ -16,7 +16,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <LocalImage
-            src="/images/ui/food.png"
+            src="/last-war-website/images/ui/food.png"
             alt="Food"
             width={18}
             height={18}
@@ -24,7 +24,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <LocalImage
-            src="/images/ui/coin.png"
+            src="/last-war-website/images/ui/coin.png"
             alt="Coin"
             width={18}
             height={18}
@@ -32,7 +32,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <LocalImage
-            src="/images/ui/diamond.png"
+            src="/last-war-website/images/ui/diamond.png"
             alt="Diamond"
             width={18}
             height={18}

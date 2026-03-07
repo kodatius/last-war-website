@@ -18,7 +18,7 @@ export default function Header() {
       <div className="container-shell flex h-16 items-center justify-between">
         <Link href="/" className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-accent">
           <LocalImage
-            src="/images/ui/logo.png"
+            src="/last-war-website/images/ui/logo.png"
             alt="Last War Survival logo"
             width={36}
             height={36}

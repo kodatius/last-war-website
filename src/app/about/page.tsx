@@ -39,7 +39,7 @@ export default function AboutPage() {
       <SectionHeading title="About [ViKF]" subtitle="Private strategy base for Server #2058." />
       <div className="mb-6 overflow-hidden rounded-xl border border-border bg-bg-secondary">
         <LocalImage
-          src="/images/banners/map.png"
+          src="/last-war-website/images/banners/map.png"
           alt="Server strategy map"
           width={1024}
           height={558}
@@ -52,7 +52,7 @@ export default function AboutPage() {
       <div className="space-y-6 rounded-lg border border-border bg-bg-secondary p-6 text-text-secondary">
         <div className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-tertiary">
           <LocalImage
-            src="/images/ui/logo.png"
+            src="/last-war-website/images/ui/logo.png"
             alt="Last War logo"
             width={56}
             height={56}

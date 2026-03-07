@@ -18,7 +18,7 @@ export default function HomePage() {
       <section className="container-shell py-10 sm:py-14">
         <div className="overflow-hidden rounded-xl border border-border bg-bg-secondary">
           <LocalImage
-            src="/images/banners/map.png"
+            src="/last-war-website/images/banners/map.png"
             alt="World map tactical view"
             width={1024}
             height={558}

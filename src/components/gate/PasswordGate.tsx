@@ -66,7 +66,7 @@ export default function PasswordGate({ children }: PasswordGateProps) {
             >
               <div className="inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-tertiary">
                 <LocalImage
-                  src="/images/ui/logo.png"
+                  src="/last-war-website/images/ui/logo.png"
                   alt="Last War logo"
                   width={48}
                   height={48}

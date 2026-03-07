@@ -7,7 +7,7 @@ export default function HeroBanner() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden border-b border-border pt-16">
       <LocalImage
-        src="/images/banners/map.png"
+        src="/last-war-website/images/banners/map.png"
         alt="Last War world map"
         width={1024}
         height={558}
@@ -24,7 +24,7 @@ export default function HeroBanner() {
         <p className="font-mono text-sm text-text-secondary">Server {ALLIANCE_INFO.server}</p>
         <div className="mx-auto mt-4 h-20 w-20 overflow-hidden rounded-xl border border-border bg-bg-tertiary sm:h-24 sm:w-24">
           <LocalImage
-            src="/images/ui/logo.png"
+            src="/last-war-website/images/ui/logo.png"
             alt="Last War Survival logo"
             width={96}
             height={96}
