@@ -1,4 +1,3 @@
-import PasswordGate from '@/components/gate/PasswordGate';
 import LayoutShell from '@/components/layout/LayoutShell';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
     default: '[ViKF] Alliance',
     template: '%s | [ViKF] Alliance',
   },
-  description: 'Private strategy HQ for [ViKF] alliance on Server #2058.',
+  description: 'Strategy HQ for [ViKF] alliance on Server #2058.',
   openGraph: {
     title: '[ViKF] Alliance',
     description: 'Static strategy base for heroes, events, squads, tips, glossary, and quizzes.',
@@ -27,9 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${rajdhani.variable}`}>
       <body>
-        <PasswordGate>
-          <LayoutShell>{children}</LayoutShell>
-        </PasswordGate>
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );
