@@ -3,9 +3,12 @@ import Card from '@/components/ui/Card';
 import LocalImage from '@/components/ui/LocalImage';
 import { img } from '@/lib/prefix';
 import { Tip } from '@/types';
+import { Star } from 'lucide-react';
 
 interface TipCardProps {
   tip: Tip;
+  bookmarked?: boolean;
+  onToggleBookmark?: (id: number) => void;
 }
 
 const heroIds = [
@@ -52,12 +55,28 @@ function getTipImage(tip: Tip): { src: string; alt: string } | null {
   return null;
 }
 
-export default function TipCard({ tip }: TipCardProps) {
+export default function TipCard({ tip, bookmarked = false, onToggleBookmark }: TipCardProps) {
   const tipImage = getTipImage(tip);
 
   return (
     <Card className="h-full">
-      <CategoryBadge emoji={tip.emoji} label={tip.category} />
+      <div className="flex items-start justify-between gap-2">
+        <CategoryBadge emoji={tip.emoji} label={tip.category} />
+        {onToggleBookmark ? (
+          <button
+            type="button"
+            aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark tip'}
+            onClick={() => onToggleBookmark(tip.id)}
+            className={`rounded-full border p-1.5 transition ${
+              bookmarked
+                ? 'border-accent bg-accent/15 text-accent'
+                : 'border-border text-text-secondary hover:border-accent/40 hover:text-accent'
+            }`}
+          >
+            <Star size={14} fill={bookmarked ? 'currentColor' : 'none'} />
+          </button>
+        ) : null}
+      </div>
       {tipImage ? (
         <LocalImage
           src={tipImage.src}
