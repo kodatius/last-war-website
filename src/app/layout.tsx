@@ -1,4 +1,5 @@
 import LayoutShell from '@/components/layout/LayoutShell';
+import { ToastProvider } from '@/components/ui/Toast';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter, Rajdhani } from 'next/font/google';
@@ -26,7 +27,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${rajdhani.variable}`}>
       <body>
-        <LayoutShell>{children}</LayoutShell>
+        <ToastProvider>
+          <LayoutShell>{children}</LayoutShell>
+        </ToastProvider>
       </body>
     </html>
   );
