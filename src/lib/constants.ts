@@ -100,6 +100,7 @@ export const NAV_GROUPS: NavGroup[] = [
     icon: Wrench,
     title: 'Tools',
     items: [
+      { href: ROUTES.tools, label: 'Tools Hub', icon: Wrench },
       { href: ROUTES.calculators, label: 'Calculators', icon: FlaskConical },
       { href: ROUTES.compare, label: 'Compare', icon: HelpCircle },
       { href: ROUTES.builder, label: 'Builder', icon: Hammer },

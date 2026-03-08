@@ -1,10 +1,18 @@
-import QuizEngine from '@/components/quiz/QuizEngine';
 import SectionHeading from '@/components/ui/SectionHeading';
+import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+
+const QuizEngine = dynamic(() => import('@/components/quiz/QuizEngine'));
 
 export const metadata: Metadata = {
   title: 'Quiz',
-  description: 'Alliance knowledge quiz with full and daily challenge modes.',
+  description: 'Alliance knowledge quiz with quick, daily, and category challenge modes.',
+  openGraph: {
+    title: 'Quiz | [ViKF] Alliance',
+    description: 'Challenge modes, streaks, and local leaderboard.',
+    images: [img('/images/banners/game.jpg')],
+  },
 };
 
 export default function QuizPage() {

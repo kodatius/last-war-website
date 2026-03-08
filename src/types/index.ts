@@ -50,7 +50,7 @@ export interface SearchItem {
   id: string;
   title: string;
   description: string;
-  category: 'hero' | 'event' | 'tip' | 'term';
+  category: 'hero' | 'event' | 'tip' | 'term' | 'tool' | 'season' | 'quiz';
   href: string;
   tags?: string[];
 }
@@ -106,15 +106,59 @@ export interface Term {
 }
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
+export type QuizMode = 'quick' | 'daily' | 'category';
+export type QuizCategory =
+  | 'heroes'
+  | 'mechanics'
+  | 'events'
+  | 'strategy'
+  | 'resources'
+  | 'alliance'
+  | 'base'
+  | 'gear'
+  | 'drone';
 
 export interface QuizQuestion {
   id: number;
+  key: string;
   question: string;
   options: string[];
   correctIndex: number;
   explanation: string;
   difficulty: Difficulty;
   points: number;
+  category: QuizCategory;
   imageSrc?: string;
   imageAlt?: string;
+}
+
+export interface SeasonWeek {
+  week: number;
+  title: string;
+  phase: 'Foundation' | 'Development' | 'Conflict' | 'Finals';
+  dateRange: string;
+  keyEvents: string[];
+  primaryFocus: string;
+  tips: string[];
+  featuredMechanic: string | null;
+}
+
+export interface SeasonOverviewData {
+  seasonNumber: number;
+  name: string;
+  theme: string;
+  tagline: string;
+  startDate: string;
+  endDate: string;
+  durationWeeks: number;
+  lore: string;
+  newFeatures: string[];
+  mechanics: Array<{
+    name: string;
+    description: string;
+    howToUse: string;
+    tips: string[];
+  }>;
+  weekSummaries: SeasonWeek[];
+  generalTips: string[];
 }
