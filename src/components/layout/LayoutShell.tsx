@@ -1,6 +1,8 @@
 'use client';
 
-import { ReactNode } from 'react';
+import SearchOverlay from '@/components/search/SearchOverlay';
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut';
+import { ReactNode, useEffect, useState } from 'react';
 import BottomNav from './BottomNav';
 import Footer from './Footer';
 import Header from './Header';
@@ -12,6 +14,15 @@ interface LayoutShellProps {
 }
 
 export default function LayoutShell({ children }: LayoutShellProps) {
+  const [searchOpen, setSearchOpen] = useState(false);
+  useKeyboardShortcut(() => setSearchOpen(true));
+
+  useEffect(() => {
+    const open = () => setSearchOpen(true);
+    window.addEventListener('open-site-search', open);
+    return () => window.removeEventListener('open-site-search', open);
+  }, []);
+
   return (
     <>
       <Header />
@@ -25,6 +36,7 @@ export default function LayoutShell({ children }: LayoutShellProps) {
       </div>
       <BottomNav />
       <Footer />
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

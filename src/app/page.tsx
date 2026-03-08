@@ -4,11 +4,17 @@ import HeroSpotlight from '@/components/home/HeroSpotlight';
 import NavCards from '@/components/home/NavCards';
 import StatsBar from '@/components/home/StatsBar';
 import TipOfTheDay from '@/components/home/TipOfTheDay';
+import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Home',
   description: 'Alliance strategy portal for [ViKF] members.',
+  openGraph: {
+    title: 'Home | [ViKF] Alliance',
+    description: 'Alliance strategy portal for [ViKF] members.',
+    images: [img('/images/banners/game.jpg')],
+  },
 };
 
 export default function HomePage() {

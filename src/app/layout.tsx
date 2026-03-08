@@ -1,5 +1,6 @@
 import LayoutShell from '@/components/layout/LayoutShell';
 import { ToastProvider } from '@/components/ui/Toast';
+import { img } from '@/lib/prefix';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter, Rajdhani } from 'next/font/google';
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '[ViKF] Alliance',
     description: 'Static strategy base for heroes, events, squads, tips, glossary, and quizzes.',
-    images: ['/og-image.png'],
+    images: [img('/images/banners/game.jpg')],
   },
   other: {
     'theme-color': '#0a0a0f',

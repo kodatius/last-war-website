@@ -7,6 +7,10 @@ import { Search } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Header() {
+  const openSearch = () => {
+    window.dispatchEvent(new Event('open-site-search'));
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-gray-950/80 backdrop-blur-md">
       <div className="container-shell flex h-16 items-center justify-between">
@@ -29,6 +33,7 @@ export default function Header() {
             aria-label="Open search"
             type="button"
             className="rounded-lg border border-border p-2 text-text-primary transition-colors hover:border-accent hover:text-accent"
+            onClick={openSearch}
           >
             <Search size={18} />
           </button>

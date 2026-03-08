@@ -113,6 +113,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 .container-shell {
   max-width: 80rem;
   margin-inline: auto;

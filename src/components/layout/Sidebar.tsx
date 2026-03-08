@@ -16,11 +16,20 @@ export default function Sidebar() {
   const primaryGroups = useMemo(() => NAV_GROUPS.filter((group) => group.id !== 'tools'), []);
   const toolsGroup = useMemo(() => NAV_GROUPS.find((group) => group.id === 'tools'), []);
   const ToolsIcon = toolsGroup?.icon;
+  const openSearch = () => window.dispatchEvent(new Event('open-site-search'));
 
   return (
     <aside className="sticky top-20 h-[calc(100vh-6rem)] w-60 shrink-0">
       <GlassCard className="flex h-full flex-col p-3">
         <nav className="space-y-1">
+          <button
+            type="button"
+            onClick={openSearch}
+            className="mb-2 w-full rounded-lg border border-border px-3 py-2 text-left text-sm text-text-secondary transition-colors hover:border-accent hover:text-accent"
+          >
+            Search (Ctrl/Cmd + K)
+          </button>
+
           {primaryGroups.map((group) =>
             group.items.map((item) => {
               const Icon = item.icon;
