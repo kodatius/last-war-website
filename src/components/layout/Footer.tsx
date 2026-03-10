@@ -1,5 +1,6 @@
 import { LINKS } from '@/lib/constants';
 import LocalImage from '@/components/ui/LocalImage';
+import Link from 'next/link';
 import { img } from '@/lib/prefix';
 
 export default function Footer() {
@@ -42,6 +43,14 @@ export default function Footer() {
           />
           <p>
             Built by Toxzin and the [ViKF] leadership team |{' '}
+            <Link href="/about" className="text-accent hover:underline">
+              About
+            </Link>{' '}
+            |{' '}
+            <Link href="/glossary" className="text-accent hover:underline">
+              Glossary
+            </Link>{' '}
+            |{' '}
             <a href={LINKS.discord} target="_blank" rel="noreferrer" className="text-accent hover:underline">
               Discord
             </a>

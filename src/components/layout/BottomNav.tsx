@@ -1,7 +1,6 @@
 'use client';
 
 import BottomSheet from '@/components/ui/BottomSheet';
-import CountdownTimer from '@/components/ui/CountdownTimer';
 import { BOTTOM_NAV_ITEMS, BOTTOM_SHEET_GROUPS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -76,12 +75,6 @@ export default function BottomNav() {
               );
             })}
           </ul>
-
-          {group.id === 'tools' ? (
-            <div className="mt-4 rounded-lg border border-border/70 bg-bg-primary/60 p-3">
-              <CountdownTimer />
-            </div>
-          ) : null}
         </BottomSheet>
       ))}
     </>
