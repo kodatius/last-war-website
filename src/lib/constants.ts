@@ -8,11 +8,8 @@ import {
   Hammer,
   HelpCircle,
   Home,
-  Info,
   Layers3,
-  LibraryBig,
   Menu,
-  Shield,
   Swords,
   Trophy,
   Users,
@@ -80,19 +77,18 @@ interface BottomNavItem {
 
 export const NAV_GROUPS: NavGroup[] = [
   {
-    id: 'primary',
-    icon: Shield,
-    title: 'Primary',
+    id: 'events',
+    icon: CalendarDays,
+    title: 'Events',
+    items: [{ href: ROUTES.events, label: 'Events', icon: CalendarDays }],
+  },
+  {
+    id: 'heroes',
+    icon: Users,
+    title: 'Heroes',
     items: [
-      { href: ROUTES.home, label: 'Home', icon: Home },
       { href: ROUTES.heroes, label: 'Heroes', icon: Users },
-      { href: ROUTES.events, label: 'Events', icon: CalendarDays },
-      { href: ROUTES.squads, label: 'Squads', icon: Swords },
-      { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
-      { href: ROUTES.glossary, label: 'Glossary', icon: LibraryBig },
       { href: ROUTES.quiz, label: 'Quiz', icon: Trophy },
-      { href: ROUTES.season, label: 'Season', icon: Layers3 },
-      { href: ROUTES.about, label: 'About', icon: Info },
     ],
   },
   {
@@ -106,44 +102,40 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: ROUTES.builder, label: 'Builder', icon: Hammer },
     ],
   },
+  {
+    id: 'squad',
+    icon: Swords,
+    title: 'Squad',
+    items: [
+      { href: ROUTES.squads, label: 'Squads', icon: Swords },
+      { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
+    ],
+  },
+  {
+    id: 'season',
+    icon: Layers3,
+    title: 'Season',
+    items: [{ href: ROUTES.season, label: 'Season', icon: Layers3 }],
+  },
 ];
 
 export const BOTTOM_NAV_ITEMS: BottomNavItem[] = [
   { id: 'home', label: 'Home', href: ROUTES.home, icon: Home },
   { id: 'heroes', label: 'Heroes', href: ROUTES.heroes, icon: Users },
-  { id: 'tools', label: 'Tools', href: ROUTES.tools, icon: Wrench, sheetId: 'tools' },
-  { id: 'tips', label: 'Tips', href: ROUTES.tips, icon: BookOpen, sheetId: 'tips' },
-  { id: 'more', label: 'More', href: ROUTES.about, icon: Menu, sheetId: 'more' },
+  { id: 'events', label: 'Events', href: ROUTES.events, icon: CalendarDays },
+  { id: 'tools', label: 'Tools', href: ROUTES.tools, icon: Wrench },
+  { id: 'more', label: 'More', href: ROUTES.squads, icon: Menu, sheetId: 'more' },
 ];
 
 export const BOTTOM_SHEET_GROUPS = [
   {
-    id: 'tools',
-    title: 'Tools',
-    items: [
-      { href: ROUTES.calculators, label: 'Calculators', icon: FlaskConical },
-      { href: ROUTES.compare, label: 'Hero Compare', icon: HelpCircle },
-      { href: ROUTES.builder, label: 'Formation Builder', icon: Hammer },
-      { href: ROUTES.events, label: 'Events', icon: CalendarDays },
-      { href: ROUTES.squads, label: 'Squads', icon: Swords },
-    ],
-  },
-  {
-    id: 'tips',
-    title: 'Tips',
-    items: [
-      { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
-      { href: ROUTES.guides, label: 'Guides', icon: BookOpen },
-      { href: ROUTES.glossary, label: 'Glossary', icon: LibraryBig },
-      { href: ROUTES.season, label: 'Season', icon: Layers3 },
-    ],
-  },
-  {
     id: 'more',
     title: 'More',
     items: [
+      { href: ROUTES.squads, label: 'Squads', icon: Swords },
+      { href: ROUTES.season, label: 'Season', icon: Layers3 },
       { href: ROUTES.quiz, label: 'Quiz', icon: Trophy },
-      { href: ROUTES.about, label: 'About', icon: Info },
+      { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
     ],
   },
 ] as const;

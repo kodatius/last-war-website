@@ -38,16 +38,6 @@ export default function AllianceDashboard() {
             </div>
             <h3 className="mt-3 font-hero text-2xl font-bold">{ALLIANCE_INFO.server}</h3>
             <p className="text-sm text-text-secondary">Alliance {ALLIANCE_INFO.name}</p>
-            <div className="mt-4 grid grid-cols-2 gap-2 text-xs">
-              <div className="rounded-lg border border-border/70 bg-bg-tertiary/55 p-2">
-                <p className="text-text-secondary">Members</p>
-                <p className="mt-1 font-mono text-base text-accent">97 / 100</p>
-              </div>
-              <div className="rounded-lg border border-border/70 bg-bg-tertiary/55 p-2">
-                <p className="text-text-secondary">Power</p>
-                <p className="mt-1 font-mono text-base text-neon-blue">4.2B</p>
-              </div>
-            </div>
           </GlassCard>
         </motion.div>
 
@@ -108,7 +98,7 @@ export default function AllianceDashboard() {
             </div>
             <div className="mt-4 inline-flex items-center gap-2 text-xs text-text-secondary">
               <Users size={13} className="text-accent" />
-              Live member tracking area active
+              Guide data refreshed as heroes and event coverage expand
             </div>
           </GlassCard>
         </motion.div>
