@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Tools Hub',
   description: 'Access calculators, hero compare, and formation builder tools.',
   openGraph: {
-    title: 'Tools Hub | [ViKF] Alliance',
+    title: 'Tools Hub | [FATE] Alliance',
     description: 'Planning and optimization tools for alliance commanders.',
     images: [img('/images/banners/game.jpg')],
   },

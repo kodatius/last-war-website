@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Heroes',
   description: 'Hero Database with filters, table view, and detailed role breakdowns.',
   openGraph: {
-    title: 'Heroes | [ViKF] Alliance',
+    title: 'Heroes | [FATE] Alliance',
     description: 'Hero database with filters and role breakdowns.',
     images: [img('/images/heroes/kimberly.png')],
   },

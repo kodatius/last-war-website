@@ -12,7 +12,7 @@ interface LeaderboardProps {
   };
 }
 
-const STORAGE_KEY = 'vikf_quiz_leaderboard_v2';
+const STORAGE_KEY = 'fate_quiz_leaderboard_v2';
 
 export default function Leaderboard({ pendingScore }: LeaderboardProps) {
   const [name, setName] = useState('');

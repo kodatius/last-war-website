@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Formation Builder',
   description: 'Build and analyze lineups with type balance and synergy checks.',
   openGraph: {
-    title: 'Formation Builder | [ViKF] Alliance',
+    title: 'Formation Builder | [FATE] Alliance',
     description: 'Interactive 2+3 slot formation planner with local saves.',
     images: [img('/images/banners/map.png')],
   },

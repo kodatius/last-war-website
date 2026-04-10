@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Season Hub',
   description: 'Season 5 week-by-week map, events, and tactical focus.',
   openGraph: {
-    title: 'Season Hub | [ViKF] Alliance',
+    title: 'Season Hub | [FATE] Alliance',
     description: 'Season planning hub with timeline, week details, and key mechanics.',
     images: [img('/images/banners/season-map.jpg')],
   },

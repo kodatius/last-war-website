@@ -10,12 +10,12 @@ const rajdhani = Rajdhani({ subsets: ['latin'], variable: '--font-rajdhani', wei
 
 export const metadata: Metadata = {
   title: {
-    default: '[ViKF] Alliance',
-    template: '%s | [ViKF] Alliance',
+    default: '[FATE] Alliance',
+    template: '%s | [FATE] Alliance',
   },
-  description: 'Strategy HQ for [ViKF] alliance on Server #2058.',
+  description: 'Strategy HQ for [FATE] alliance on Server #2058.',
   openGraph: {
-    title: '[ViKF] Alliance',
+    title: '[FATE] Alliance',
     description: 'Static strategy base for heroes, events, squads, tips, glossary, and quizzes.',
     images: [img('/images/banners/game.jpg')],
   },

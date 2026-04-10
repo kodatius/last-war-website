@@ -17,11 +17,11 @@ import {
 } from 'lucide-react';
 
 export const ALLIANCE_INFO = {
-  name: '[ViKF]',
+  name: '[FATE]',
   server: '#2058',
   tagline: 'Strategy wins wars, but preparation wins servers.',
   password: '5955',
-  cookieName: 'vikf_access',
+  cookieName: 'fate_access',
   cookieValue: 'verified',
   cookieDays: 30,
 } as const;

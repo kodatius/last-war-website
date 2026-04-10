@@ -66,7 +66,7 @@ export default function HeroBanner() {
           className="font-hero text-5xl font-bold tracking-[0.16em] text-accent sm:text-7xl md:text-8xl"
           style={{ textShadow: '0 0 10px rgba(212,160,23,0.7), 0 0 32px rgba(212,160,23,0.35)' }}
         >
-          [ViKF]
+          [FATE]
         </h1>
         <p className="mt-4 max-w-2xl text-base text-text-primary sm:text-xl">
           Tactical intel, event timing, and hero dominance built for Server #2058 war nights.

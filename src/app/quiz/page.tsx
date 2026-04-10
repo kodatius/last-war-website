@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Quiz',
   description: 'Alliance knowledge quiz with quick, daily, and category challenge modes.',
   openGraph: {
-    title: 'Quiz | [ViKF] Alliance',
+    title: 'Quiz | [FATE] Alliance',
     description: 'Challenge modes, streaks, and local leaderboard.',
     images: [img('/images/banners/game.jpg')],
   },

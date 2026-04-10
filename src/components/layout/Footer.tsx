@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="mt-16 border-t border-border bg-bg-secondary/70 py-8">
       <div className="container-shell flex flex-col gap-3 text-sm text-text-secondary sm:flex-row sm:items-center sm:justify-between">
-        <p>Built for [ViKF] | Server #2058</p>
+        <p>Built for [FATE] | Server #2058</p>
         <div className="flex flex-wrap items-center gap-2">
           <LocalImage
             src={img('/images/ui/iron.png')}
@@ -42,7 +42,7 @@ export default function Footer() {
             className="h-full w-full object-contain"
           />
           <p>
-            Built by Toxzin and the [ViKF] leadership team |{' '}
+            Built by Toxzin and the [FATE] leadership team |{' '}
             <Link href="/about" className="text-accent hover:underline">
               About
             </Link>{' '}

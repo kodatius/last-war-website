@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Calculators',
   description: 'Arms Race and resource optimization calculators for alliance planning.',
   openGraph: {
-    title: 'Calculators | [ViKF] Alliance',
+    title: 'Calculators | [FATE] Alliance',
     description: 'Point estimates, milestone planning, and resource timelines.',
     images: [img('/images/banners/map.png')],
   },

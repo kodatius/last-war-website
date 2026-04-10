@@ -9,7 +9,7 @@ interface SavedFormationsProps {
   onLoad: (slots: Array<string | null>) => void;
 }
 
-const STORAGE_KEY = 'vikf_saved_formations_v1';
+const STORAGE_KEY = 'fate_saved_formations_v1';
 
 export default function SavedFormations({ slots, onLoad }: SavedFormationsProps) {
   const [name, setName] = useState('');

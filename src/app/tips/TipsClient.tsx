@@ -14,7 +14,7 @@ import { useMemo, useState } from 'react';
 export default function TipsClient() {
   const [query, setQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
-  const [bookmarked, setBookmarked] = useLocalStorage<number[]>('vikf_bookmarked_tips', []);
+  const [bookmarked, setBookmarked] = useLocalStorage<number[]>('fate_bookmarked_tips', []);
   const [bookmarkedOnly, setBookmarkedOnly] = useState(false);
   const [randomPulseId, setRandomPulseId] = useState<number | null>(null);
 

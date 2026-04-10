@@ -2,9 +2,7 @@
 
 import TopNav from '@/components/layout/TopNav';
 import CountdownTimer from '@/components/ui/CountdownTimer';
-import LocalImage from '@/components/ui/LocalImage';
 import { LINKS } from '@/lib/constants';
-import { img } from '@/lib/prefix';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 
@@ -17,18 +15,8 @@ export default function Header() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-gray-950/85 backdrop-blur-md">
       <div className="container-shell py-3">
         <div className="flex items-center justify-between gap-3 lg:gap-6">
-          <Link href="/" className="inline-flex shrink-0 items-center gap-2 text-xl font-bold tracking-tight text-accent">
-            <LocalImage
-              src={img('/images/ui/logo.png')}
-              alt="Last War Survival logo"
-              width={36}
-              height={36}
-              loading="eager"
-              containerClassName="h-9 w-9 overflow-hidden rounded-md border border-border bg-bg-tertiary"
-              className="h-full w-full object-cover"
-              fallbackText="LW"
-            />
-            <span>[ViKF]</span>
+          <Link href="/" className="inline-flex shrink-0 items-center text-2xl font-extrabold tracking-tight text-accent">
+            [FATE]
           </Link>
 
           <TopNav />

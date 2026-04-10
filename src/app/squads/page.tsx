@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Squads',
   description: 'Formation and matchup guidance for Tank, Aircraft, and Missile squads.',
   openGraph: {
-    title: 'Squads | [ViKF] Alliance',
+    title: 'Squads | [FATE] Alliance',
     description: 'Formation and matchup guidance for squad archetypes.',
     images: [img('/images/banners/map.png')],
   },

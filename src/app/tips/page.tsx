@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Tips',
   description: '108+ practical tips covering heroes, events, resources, and progression.',
   openGraph: {
-    title: 'Tips | [ViKF] Alliance',
+    title: 'Tips | [FATE] Alliance',
     description: 'Practical tips covering heroes, events, resources, and progression.',
     images: [img('/images/banners/game.jpg')],
   },

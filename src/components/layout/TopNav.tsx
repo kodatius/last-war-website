@@ -19,6 +19,21 @@ export default function TopNav() {
   const pathname = usePathname();
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function openMenu(groupId: string) {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+    setOpenGroup(groupId);
+  }
+
+  function closeMenu(groupId: string) {
+    closeTimer.current = setTimeout(() => {
+      setOpenGroup((current) => (current === groupId ? null : current));
+    }, 150);
+  }
 
   useEffect(() => {
     setOpenGroup(null);
@@ -45,8 +60,8 @@ export default function TopNav() {
           <div
             key={group.id}
             className="relative"
-            onMouseEnter={() => setOpenGroup(group.id)}
-            onMouseLeave={() => setOpenGroup((current) => (current === group.id ? null : current))}
+            onMouseEnter={() => openMenu(group.id)}
+            onMouseLeave={() => closeMenu(group.id)}
           >
             <button
               type="button"
@@ -61,6 +76,9 @@ export default function TopNav() {
               <span>{group.title}</span>
               <ChevronDown size={16} className={cn('transition-transform', isOpen && 'rotate-180')} />
             </button>
+
+            {/* Invisible bridge so the cursor can travel from the button to the dropdown */}
+            <div className="absolute left-0 top-full h-2 w-full" />
 
             <div
               className={cn(

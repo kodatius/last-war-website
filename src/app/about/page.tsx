@@ -6,10 +6,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About the [ViKF] alliance knowledge base and leadership team.',
+  description: 'About the [FATE] alliance knowledge base and leadership team.',
   openGraph: {
-    title: 'About | [ViKF] Alliance',
-    description: 'About the [ViKF] alliance knowledge base and leadership team.',
+    title: 'About | [FATE] Alliance',
+    description: 'About the [FATE] alliance knowledge base and leadership team.',
     images: [img('/images/banners/map.png')],
   },
 };
@@ -42,7 +42,7 @@ const aboutHeroIds = [
 export default function AboutPage() {
   return (
     <div className="container-shell py-16 sm:py-24">
-      <SectionHeading title="About [ViKF]" subtitle="Private strategy base for Server #2058." />
+      <SectionHeading title="About [FATE]" subtitle="Private strategy base for Server #2058." />
       <div className="mb-6 overflow-hidden rounded-xl border border-border bg-bg-secondary shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
         <LocalImage
           src={img('/images/banners/map.png')}
@@ -69,10 +69,10 @@ export default function AboutPage() {
           />
         </div>
         <p>
-          [ViKF] is an alliance built on disciplined event execution, data-driven hero investment, and strong member coordination. This site consolidates our playbook into one source of truth.
+          [FATE] is an alliance built on disciplined event execution, data-driven hero investment, and strong member coordination. This site consolidates our playbook into one source of truth.
         </p>
         <p>Server: #2058</p>
-        <p>Built by Toxzin and the [ViKF] leadership team.</p>
+        <p>Built by Toxzin and the [FATE] leadership team.</p>
         <p>Powered by Next.js static export, deployed on GitHub Pages.</p>
         <DiscordButton className="w-full sm:w-auto" />
       </div>

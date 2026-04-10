@@ -9,10 +9,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Alliance strategy portal for [ViKF] members.',
+  description: 'Alliance strategy portal for [FATE] members.',
   openGraph: {
-    title: 'Home | [ViKF] Alliance',
-    description: 'Alliance strategy portal for [ViKF] members.',
+    title: 'Home | [FATE] Alliance',
+    description: 'Alliance strategy portal for [FATE] members.',
     images: [img('/images/banners/game.jpg')],
   },
 };

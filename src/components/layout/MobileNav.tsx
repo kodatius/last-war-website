@@ -33,7 +33,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
             exit={{ x: '100%' }}
             transition={{ duration: 0.25 }}
           >
-            <div className="mb-8 text-lg font-semibold text-accent">[ViKF] Navigation</div>
+            <div className="mb-8 text-lg font-semibold text-accent">[FATE] Navigation</div>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>

@@ -78,7 +78,7 @@ export default function PasswordGate({ children }: PasswordGateProps) {
                 />
               </div>
               <p className="mt-4 text-sm text-text-secondary">Alliance access required</p>
-              <h1 className="mt-2 text-3xl font-bold text-accent">[ViKF] Command Gate</h1>
+              <h1 className="mt-2 text-3xl font-bold text-accent">[FATE] Command Gate</h1>
               <p className="mt-2 text-sm text-text-secondary">Enter alliance password to continue.</p>
 
               <input

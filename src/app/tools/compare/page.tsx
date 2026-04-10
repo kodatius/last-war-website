@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Hero Compare',
   description: 'Compare hero stats side-by-side and identify role gaps.',
   openGraph: {
-    title: 'Hero Compare | [ViKF] Alliance',
+    title: 'Hero Compare | [FATE] Alliance',
     description: 'Analyze up to 4 heroes with highlighted stat differences.',
     images: [img('/images/heroes/kimberly.png')],
   },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Glossary',
   description: '32 key Last War terms with aliases and definitions.',
   openGraph: {
-    title: 'Glossary | [ViKF] Alliance',
+    title: 'Glossary | [FATE] Alliance',
     description: 'Key Last War terms with aliases and definitions.',
     images: [img('/images/banners/map.png')],
   },

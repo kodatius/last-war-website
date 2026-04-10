@@ -7,10 +7,10 @@ const DynamicEventsClient = dynamic(() => import('./EventsClient'));
 
 export const metadata: Metadata = {
   title: 'Events',
-  description: 'Weekly and monthly event guidance for [ViKF].',
+  description: 'Weekly and monthly event guidance for [FATE].',
   openGraph: {
-    title: 'Events | [ViKF] Alliance',
-    description: 'Weekly and monthly event guidance for [ViKF].',
+    title: 'Events | [FATE] Alliance',
+    description: 'Weekly and monthly event guidance for [FATE].',
     images: [img('/images/banners/map.png')],
   },
 };
