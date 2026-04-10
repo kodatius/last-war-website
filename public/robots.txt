@@ -1,2 +1,5 @@
 User-agent: *
+Allow: /last-war-website/
 Disallow: /
+
+Sitemap: https://vikfalliande.github.io/last-war-website/sitemap.xml
