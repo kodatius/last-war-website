@@ -6,6 +6,7 @@ import FrequencyBadge from '@/components/ui/FrequencyBadge';
 import { img } from '@/lib/prefix';
 import { GameEvent } from '@/types';
 import EventDetail from './EventDetail';
+import NextEventTimer from './NextEventTimer';
 
 interface EventCardProps {
   event: GameEvent;
@@ -19,6 +20,8 @@ function getEventIconPath(event: GameEvent): string {
 }
 
 export default function EventCard({ event }: EventCardProps) {
+  const quickTip = event.strategies[0]?.description ?? 'Coordinate this event with your alliance schedule for best rewards.';
+
   return (
     <ExpandableCard
       header={
@@ -38,11 +41,15 @@ export default function EventCard({ event }: EventCardProps) {
                 {event.icon} {event.name}
               </p>
               <p className="mt-1 text-sm text-text-secondary">{event.description}</p>
+              <p className="mt-2 rounded-lg border border-accent/30 bg-accent/10 px-2 py-1 text-xs text-accent-light">
+                Quick tip: {quickTip}
+              </p>
             </div>
           </div>
           <div className="flex flex-col items-end gap-2">
             <FrequencyBadge frequency={event.frequency} />
             <span className="text-xs text-text-secondary">{event.strategies.length} strategies</span>
+            <NextEventTimer event={event} />
           </div>
         </div>
       }

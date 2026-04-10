@@ -11,6 +11,16 @@
   --color-accent-dark: #a07a10;
   --color-text-primary: #e8e8f0;
   --color-text-secondary: #8888a0;
+  --color-glass-bg: rgba(18, 18, 26, 0.6);
+  --color-glass-border: rgba(212, 160, 23, 0.15);
+  --color-glass-blur: 12px;
+  --color-neon-blue: #00d4ff;
+  --color-neon-green: #00ff88;
+  --color-neon-pink: #ff3399;
+  --color-neon-purple: #a855f7;
+  --color-status-online: #22c55e;
+  --color-status-warning: #f59e0b;
+  --color-status-danger: #ef4444;
   --color-success: #22c55e;
   --color-error: #ef4444;
   --color-tier-ss: #ff2d55;
@@ -25,14 +35,12 @@
 
 :root {
   color-scheme: dark;
-  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-rajdhani: 'Rajdhani', system-ui, -apple-system, sans-serif;
 }
 
 body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), 'Rajdhani', sans-serif;
   min-height: 100vh;
   background-image:
     radial-gradient(circle at 1px 1px, rgba(212, 160, 23, 0.08) 1px, transparent 0),
@@ -40,9 +48,74 @@ body {
   background-size: 24px 24px, 100% 3px;
 }
 
+.glass-card {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(var(--color-glass-blur));
+  -webkit-backdrop-filter: blur(var(--color-glass-blur));
+}
+
+.glass-card-hover {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(212, 160, 23, 0.35);
+  box-shadow: 0 0 20px rgba(212, 160, 23, 0.08);
+}
+
+.font-hero {
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(240, 192, 64, 0.1), transparent);
+  animation: skeleton-shimmer 1.4s infinite;
+}
+
+.particle-float {
+  animation: particle-float 8s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate3d(0, -16px, 0);
+    opacity: 1;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .container-shell {

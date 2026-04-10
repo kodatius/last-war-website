@@ -1,8 +1,10 @@
 import type { QuizQuestion } from '@/types';
 import { img } from '@/lib/prefix';
 import {
+  CATEGORY_NAMES,
   DIFFICULTY_POINTS,
   QUIZ_QUESTIONS,
+  type QuizCategory,
   type Difficulty,
 } from './raw/quiz-data';
 
@@ -27,10 +29,14 @@ export const quizQuestions: QuizQuestion[] = QUIZ_QUESTIONS.map((question, index
     return image ? { imageSrc: image.src, imageAlt: image.alt } : {};
   })(),
   id: index + 1,
+  key: question.id,
   question: question.question,
   options: question.options,
   correctIndex: question.correctAnswer,
   explanation: question.explanation,
   difficulty: question.difficulty,
   points: DIFFICULTY_POINTS[question.difficulty as Difficulty],
+  category: question.category as QuizCategory,
 }));
+
+export const quizCategoryNames = CATEGORY_NAMES;

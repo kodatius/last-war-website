@@ -6,7 +6,12 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Learn about [ViKF] alliance on Last War: Survival Server #2058. Meet the leadership team led by Toxzin, explore our strategic playbook, and join our community on Discord.',
+  description: 'About the [ViKF] alliance knowledge base and leadership team.',
+  openGraph: {
+    title: 'About | [ViKF] Alliance',
+    description: 'About the [ViKF] alliance knowledge base and leadership team.',
+    images: [img('/images/banners/map.png')],
+  },
 };
 
 const aboutHeroIds = [
@@ -38,7 +43,7 @@ export default function AboutPage() {
   return (
     <div className="container-shell py-16 sm:py-24">
       <SectionHeading title="About [ViKF]" subtitle="Private strategy base for Server #2058." />
-      <div className="mb-6 overflow-hidden rounded-xl border border-border bg-bg-secondary">
+      <div className="mb-6 overflow-hidden rounded-xl border border-border bg-bg-secondary shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
         <LocalImage
           src={img('/images/banners/map.png')}
           alt="Server strategy map"
@@ -50,7 +55,7 @@ export default function AboutPage() {
           fallbackText="Strategy map"
         />
       </div>
-      <div className="space-y-6 rounded-lg border border-border bg-bg-secondary p-6 text-text-secondary">
+      <div className="glass-card space-y-6 rounded-xl border border-glass-border p-6 text-text-secondary">
         <div className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-tertiary">
           <LocalImage
             src={img('/images/ui/logo.png')}
@@ -68,10 +73,10 @@ export default function AboutPage() {
         </p>
         <p>Server: #2058</p>
         <p>Built by Toxzin and the [ViKF] leadership team.</p>
-        <p>Powered by Next.js, deployed on Vercel.</p>
+        <p>Powered by Next.js static export, deployed on GitHub Pages.</p>
         <DiscordButton className="w-full sm:w-auto" />
       </div>
-      <div className="mt-8 rounded-lg border border-border bg-bg-secondary p-4 sm:p-6">
+      <div className="glass-card mt-8 rounded-xl border border-glass-border p-4 sm:p-6">
         <h2 className="text-xl font-semibold">Hero Roster</h2>
         <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-6 lg:grid-cols-8">
           {aboutHeroIds.map((heroId) => (

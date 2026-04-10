@@ -1,40 +1,23 @@
 import LayoutShell from '@/components/layout/LayoutShell';
+import { ToastProvider } from '@/components/ui/Toast';
+import { img } from '@/lib/prefix';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
+import { Inter, Rajdhani } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const rajdhani = Rajdhani({ subsets: ['latin'], variable: '--font-rajdhani', weight: ['700'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vikfalliande.github.io/last-war-website'),
   title: {
-    default: '[ViKF] Alliance - Last War Strategy Portal',
+    default: '[ViKF] Alliance',
     template: '%s | [ViKF] Alliance',
   },
-  description: 'Strategic headquarters for the [ViKF] alliance on Last War: Survival Server #2058. Comprehensive guides for heroes, events, squads, tips, and more.',
-  keywords: ['Last War: Survival', 'Strategy', 'Gaming', 'ViKF Alliance', 'Server 2058'],
-  authors: [{ name: '[ViKF] Alliance' }],
+  description: 'Strategy HQ for [ViKF] alliance on Server #2058.',
   openGraph: {
-    title: '[ViKF] Alliance - Last War Strategy Portal',
-    description: 'Strategic headquarters for the [ViKF] alliance. Comprehensive guides for heroes, events, squads, tips, and more.',
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://vikfalliande.github.io/last-war-website',
-    images: [
-      {
-        url: '/last-war-website/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: '[ViKF] Alliance Last War Strategy Portal',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '[ViKF] Alliance - Last War Strategy Portal',
-    description: 'Strategic headquarters for the [ViKF] alliance on Last War: Survival',
-    images: ['/last-war-website/og-image.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
+    title: '[ViKF] Alliance',
+    description: 'Static strategy base for heroes, events, squads, tips, glossary, and quizzes.',
+    images: [img('/images/banners/game.jpg')],
   },
   other: {
     'theme-color': '#0a0a0f',
@@ -43,14 +26,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rajdhani:wght@700&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className={`${inter.variable} ${rajdhani.variable}`}>
       <body>
-        <LayoutShell>{children}</LayoutShell>
+        <ToastProvider>
+          <LayoutShell>{children}</LayoutShell>
+        </ToastProvider>
       </body>
     </html>
   );

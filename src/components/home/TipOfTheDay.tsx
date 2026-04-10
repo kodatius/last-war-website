@@ -1,24 +1,26 @@
 import CategoryBadge from '@/components/ui/CategoryBadge';
-import Card from '@/components/ui/Card';
+import GlassCard from '@/components/ui/GlassCard';
 import { tips } from '@/data/tips-data';
 import { getTipOfDayIndex } from '@/lib/utils';
+import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export default function TipOfTheDay() {
   const tip = tips[getTipOfDayIndex(tips.length)];
 
   return (
-    <section className="container-shell pb-16 sm:pb-24">
-      <Card>
-        <p className="text-sm text-accent">Tip Of The Day</p>
-        <p className="mt-3 text-lg">{tip.text}</p>
-        <div className="mt-4 flex items-center justify-between">
-          <CategoryBadge emoji={tip.emoji} label={tip.category} />
-          <Link href="/tips" className="text-sm text-accent hover:underline">
-            See all tips -&gt;
-          </Link>
-        </div>
-      </Card>
-    </section>
+    <GlassCard className="h-full">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs uppercase tracking-[0.2em] text-accent">Tip Of The Day</p>
+        <Sparkles size={16} className="text-accent" />
+      </div>
+      <p className="mt-4 text-base leading-relaxed sm:text-lg">{tip.text}</p>
+      <div className="mt-5 flex items-center justify-between gap-3">
+        <CategoryBadge emoji={tip.emoji} label={tip.category} />
+        <Link href="/tips" className="text-sm text-accent hover:text-accent-light">
+          Open tips -&gt;
+        </Link>
+      </div>
+    </GlassCard>
   );
 }

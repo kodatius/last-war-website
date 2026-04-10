@@ -1,10 +1,18 @@
-import QuizEngine from '@/components/quiz/QuizEngine';
 import SectionHeading from '@/components/ui/SectionHeading';
+import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+
+const QuizEngine = dynamic(() => import('@/components/quiz/QuizEngine'));
 
 export const metadata: Metadata = {
   title: 'Quiz',
-  description: 'Interactive alliance knowledge quiz for Last War: Survival with 100+ questions. Test your strategy knowledge with daily challenges and compete with alliance members.',
+  description: 'Alliance knowledge quiz with quick, daily, and category challenge modes.',
+  openGraph: {
+    title: 'Quiz | [ViKF] Alliance',
+    description: 'Challenge modes, streaks, and local leaderboard.',
+    images: [img('/images/banners/game.jpg')],
+  },
 };
 
 export default function QuizPage() {

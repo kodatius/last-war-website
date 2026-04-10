@@ -1,38 +1,20 @@
-import EventCard from '@/components/events/EventCard';
-import LocalImage from '@/components/ui/LocalImage';
-import WeeklyCalendar from '@/components/events/WeeklyCalendar';
-import SectionHeading from '@/components/ui/SectionHeading';
 import { events } from '@/data/events-data';
 import { img } from '@/lib/prefix';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+
+const DynamicEventsClient = dynamic(() => import('./EventsClient'));
 
 export const metadata: Metadata = {
   title: 'Events',
-  description: 'Strategic guide to 11 core Last War events including alliance duel, iron war, server vs server, and more. Weekly schedules and optimized strategies for maximum scores.',
+  description: 'Weekly and monthly event guidance for [ViKF].',
+  openGraph: {
+    title: 'Events | [ViKF] Alliance',
+    description: 'Weekly and monthly event guidance for [ViKF].',
+    images: [img('/images/banners/map.png')],
+  },
 };
 
 export default function EventsPage() {
-  return (
-    <div className="container-shell py-16 sm:py-24">
-      <div className="mb-8 overflow-hidden rounded-xl border border-border bg-bg-secondary">
-        <LocalImage
-          src={img('/images/banners/map.png')}
-          alt="Event war map"
-          width={1024}
-          height={558}
-          loading="eager"
-          containerClassName="h-[180px] sm:h-[280px]"
-          className="h-full w-full object-cover"
-          fallbackText="Events map"
-        />
-      </div>
-      <SectionHeading title="Event Guides" subtitle="11 core events, schedules, and strategy breakdowns." />
-      <WeeklyCalendar events={events} />
-      <div className="mt-8 space-y-4">
-        {events.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
-      </div>
-    </div>
-  );
+  return <DynamicEventsClient events={events} />;
 }

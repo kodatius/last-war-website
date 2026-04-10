@@ -1,9 +1,17 @@
 import type { Metadata } from 'next';
-import TipsClient from './TipsClient';
+import dynamic from 'next/dynamic';
+import { img } from '@/lib/prefix';
+
+const TipsClient = dynamic(() => import('./TipsClient'));
 
 export const metadata: Metadata = {
   title: 'Tips',
-  description: 'Database of 100+ practical Last War strategy tips covering heroes, events, squad composition, resource management, base building, and account progression.',
+  description: '108+ practical tips covering heroes, events, resources, and progression.',
+  openGraph: {
+    title: 'Tips | [ViKF] Alliance',
+    description: 'Practical tips covering heroes, events, resources, and progression.',
+    images: [img('/images/banners/game.jpg')],
+  },
 };
 
 export default function TipsPage() {

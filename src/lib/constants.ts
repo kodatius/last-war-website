@@ -1,5 +1,20 @@
 import { Difficulty, EventFrequency, HeroType, Rarity, Tier } from '@/types';
 import { img } from '@/lib/prefix';
+import type { LucideIcon } from 'lucide-react';
+import {
+  BookOpen,
+  CalendarDays,
+  FlaskConical,
+  Hammer,
+  HelpCircle,
+  Home,
+  Layers3,
+  Menu,
+  Swords,
+  Trophy,
+  Users,
+  Wrench,
+} from 'lucide-react';
 
 export const ALLIANCE_INFO = {
   name: '[ViKF]',
@@ -16,16 +31,116 @@ export const LINKS = {
   heroImageBase: img('/images/heroes'),
 } as const;
 
-export const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/heroes', label: 'Heroes' },
-  { href: '/events', label: 'Events' },
-  { href: '/squads', label: 'Squads' },
-  { href: '/tips', label: 'Tips' },
-  { href: '/glossary', label: 'Glossary' },
-  { href: '/quiz', label: 'Quiz' },
-  { href: '/about', label: 'About' },
+export const ROUTES = {
+  home: '/',
+  heroes: '/heroes',
+  events: '/events',
+  squads: '/squads',
+  tips: '/tips',
+  glossary: '/glossary',
+  quiz: '/quiz',
+  season: '/season',
+  tools: '/tools',
+  calculators: '/tools/calculators',
+  compare: '/tools/compare',
+  builder: '/tools/builder',
+  about: '/about',
+} as const;
+
+export const ALLIANCE_DUEL_TIME_UTC = {
+  hour: 2,
+  minute: 0,
+} as const;
+
+export const ALLIANCE_DUEL_ACTIVE_MINUTES = 30;
+
+export interface NavItem {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+interface NavGroup {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  items: NavItem[];
+}
+
+interface BottomNavItem {
+  id: string;
+  label: string;
+  href: string;
+  icon: LucideIcon;
+  sheetId?: string;
+}
+
+export const NAV_GROUPS: NavGroup[] = [
+  {
+    id: 'events',
+    icon: CalendarDays,
+    title: 'Events',
+    items: [{ href: ROUTES.events, label: 'Events', icon: CalendarDays }],
+  },
+  {
+    id: 'heroes',
+    icon: Users,
+    title: 'Heroes',
+    items: [
+      { href: ROUTES.heroes, label: 'Heroes', icon: Users },
+      { href: ROUTES.quiz, label: 'Quiz', icon: Trophy },
+    ],
+  },
+  {
+    id: 'tools',
+    icon: Wrench,
+    title: 'Tools',
+    items: [
+      { href: ROUTES.tools, label: 'Tools Hub', icon: Wrench },
+      { href: ROUTES.calculators, label: 'Calculators', icon: FlaskConical },
+      { href: ROUTES.compare, label: 'Compare', icon: HelpCircle },
+      { href: ROUTES.builder, label: 'Builder', icon: Hammer },
+    ],
+  },
+  {
+    id: 'squad',
+    icon: Swords,
+    title: 'Squad',
+    items: [
+      { href: ROUTES.squads, label: 'Squads', icon: Swords },
+      { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
+    ],
+  },
+  {
+    id: 'season',
+    icon: Layers3,
+    title: 'Season',
+    items: [{ href: ROUTES.season, label: 'Season', icon: Layers3 }],
+  },
+];
+
+export const BOTTOM_NAV_ITEMS: BottomNavItem[] = [
+  { id: 'home', label: 'Home', href: ROUTES.home, icon: Home },
+  { id: 'heroes', label: 'Heroes', href: ROUTES.heroes, icon: Users },
+  { id: 'events', label: 'Events', href: ROUTES.events, icon: CalendarDays },
+  { id: 'tools', label: 'Tools', href: ROUTES.tools, icon: Wrench },
+  { id: 'more', label: 'More', href: ROUTES.squads, icon: Menu, sheetId: 'more' },
+];
+
+export const BOTTOM_SHEET_GROUPS = [
+  {
+    id: 'more',
+    title: 'More',
+    items: [
+      { href: ROUTES.squads, label: 'Squads', icon: Swords },
+      { href: ROUTES.season, label: 'Season', icon: Layers3 },
+      { href: ROUTES.quiz, label: 'Quiz', icon: Trophy },
+      { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
+    ],
+  },
 ] as const;
+
+export const NAV_LINKS = NAV_GROUPS.flatMap((group) => group.items).map(({ href, label }) => ({ href, label }));
 
 export const TIER_COLORS: Record<Tier, string> = {
   SS: 'bg-tier-ss text-white',

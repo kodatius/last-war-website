@@ -1,61 +1,97 @@
 'use client';
 
-import { NAV_LINKS } from '@/lib/constants';
+import TopNav from '@/components/layout/TopNav';
+import CountdownTimer from '@/components/ui/CountdownTimer';
 import LocalImage from '@/components/ui/LocalImage';
+import { LINKS } from '@/lib/constants';
 import { img } from '@/lib/prefix';
-import { cn } from '@/lib/utils';
-import { Menu } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import MobileNav from './MobileNav';
 
 export default function Header() {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const openSearch = () => {
+    window.dispatchEvent(new Event('open-site-search'));
+  };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-gray-950/80 backdrop-blur-md">
-      <div className="container-shell flex h-16 items-center justify-between">
-        <Link href="/" className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-accent">
-          <LocalImage
-            src={img('/images/ui/logo.png')}
-            alt="Last War Survival logo"
-            width={36}
-            height={36}
-            loading="eager"
-            containerClassName="h-9 w-9 overflow-hidden rounded-md border border-border bg-bg-tertiary"
-            className="h-full w-full object-cover"
-            fallbackText="LW"
-          />
-          <span>[ViKF]</span>
-        </Link>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-gray-950/85 backdrop-blur-md">
+      <div className="container-shell py-3">
+        <div className="flex items-center justify-between gap-3 lg:gap-6">
+          <Link href="/" className="inline-flex shrink-0 items-center gap-2 text-xl font-bold tracking-tight text-accent">
+            <LocalImage
+              src={img('/images/ui/logo.png')}
+              alt="Last War Survival logo"
+              width={36}
+              height={36}
+              loading="eager"
+              containerClassName="h-9 w-9 overflow-hidden rounded-md border border-border bg-bg-tertiary"
+              className="h-full w-full object-cover"
+              fallbackText="LW"
+            />
+            <span>[ViKF]</span>
+          </Link>
 
-        <nav className="hidden items-center gap-5 md:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'border-b-2 border-transparent pb-1 text-sm font-medium transition-colors hover:text-accent',
-                pathname === link.href && 'border-accent text-accent'
-              )}
+          <TopNav />
+
+          <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex">
+            <button
+              aria-label="Open search"
+              type="button"
+              className="flex min-w-[240px] items-center justify-between rounded-full border border-border bg-bg-secondary/70 px-4 py-2 text-sm text-text-secondary transition-colors hover:border-accent hover:text-text-primary xl:min-w-[320px]"
+              onClick={openSearch}
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+              <span className="inline-flex items-center gap-2">
+                <Search size={16} />
+                <span>Search guides, heroes, events...</span>
+              </span>
+              <span className="rounded-md border border-border px-2 py-0.5 text-[11px] uppercase tracking-wide">Cmd+K</span>
+            </button>
 
-        <button
-          aria-label="Open navigation menu"
-          className="rounded-lg border border-border p-2 text-text-primary md:hidden"
-          onClick={() => setIsOpen(true)}
-          type="button"
-        >
-          <Menu size={18} />
-        </button>
+            <div className="rounded-2xl border border-border/70 bg-bg-secondary/70 px-3 py-2">
+              <CountdownTimer className="text-sm" />
+            </div>
+
+            <a
+              href={LINKS.discord}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-accent/50 px-3 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Discord
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-3 flex flex-col gap-2 lg:hidden">
+          <div className="flex items-center gap-2">
+            <button
+              aria-label="Open search"
+              type="button"
+              className="flex flex-1 items-center justify-between rounded-xl border border-border bg-bg-secondary/70 px-4 py-2.5 text-sm text-text-secondary transition-colors hover:border-accent hover:text-text-primary"
+              onClick={openSearch}
+            >
+              <span className="inline-flex items-center gap-2">
+                <Search size={16} />
+                <span>Search</span>
+              </span>
+              <span className="text-[11px] uppercase tracking-wide">Cmd+K</span>
+            </button>
+
+            <a
+              href={LINKS.discord}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-accent/50 px-3 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Discord
+            </a>
+          </div>
+
+          <div className="rounded-xl border border-border/70 bg-bg-secondary/70 px-4 py-2">
+            <CountdownTimer className="text-base" />
+          </div>
+        </div>
       </div>
-      <MobileNav open={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );
 }
