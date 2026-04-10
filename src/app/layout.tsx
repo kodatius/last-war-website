@@ -1,5 +1,4 @@
 import LayoutShell from '@/components/layout/LayoutShell';
-import PasswordGate from '@/components/gate/PasswordGate';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 
@@ -46,9 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" style={{ '--font-inter': 'system-ui, -apple-system, sans-serif', '--font-rajdhani': 'system-ui, -apple-system, sans-serif' } as React.CSSProperties}>
       <body>
-        <PasswordGate>
-          <LayoutShell>{children}</LayoutShell>
-        </PasswordGate>
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );
