@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Events',
-  description: 'Weekly and monthly event guidance for [ViKF].',
+  description: 'Strategic guide to 11 core Last War events including alliance duel, iron war, server vs server, and more. Weekly schedules and optimized strategies for maximum scores.',
 };
 
 export default function EventsPage() {

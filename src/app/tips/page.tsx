@@ -3,7 +3,7 @@ import TipsClient from './TipsClient';
 
 export const metadata: Metadata = {
   title: 'Tips',
-  description: '108+ practical tips covering heroes, events, resources, and progression.',
+  description: 'Database of 100+ practical Last War strategy tips covering heroes, events, squad composition, resource management, base building, and account progression.',
 };
 
 export default function TipsPage() {

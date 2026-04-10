@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Squads',
-  description: 'Formation and matchup guidance for Tank, Aircraft, and Missile squads.',
+  description: 'Squad formation builder with detailed positioning logic, type matchup counters, and recommended hero formations for Tank, Aircraft, and Missile squads.',
 };
 
 const formations = [

@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Quiz',
-  description: 'Alliance knowledge quiz with full and daily challenge modes.',
+  description: 'Interactive alliance knowledge quiz for Last War: Survival with 100+ questions. Test your strategy knowledge with daily challenges and compete with alliance members.',
 };
 
 export default function QuizPage() {

@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Alliance strategy portal for [ViKF] members.',
+  description: 'Strategic command center for [ViKF] alliance on Last War: Survival Server #2058. Access hero guides, event strategies, squad formations, tips, and quizzes.',
 };
 
 export default function HomePage() {

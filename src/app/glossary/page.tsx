@@ -3,7 +3,7 @@ import GlossaryClient from './GlossaryClient';
 
 export const metadata: Metadata = {
   title: 'Glossary',
-  description: '32 key Last War terms with aliases and definitions.',
+  description: 'Complete Last War: Survival glossary with 32 essential gaming terms, aliases, and definitions for alliance members and new players.',
 };
 
 export default function GlossaryPage() {

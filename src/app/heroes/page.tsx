@@ -3,7 +3,7 @@ import HeroesClient from './HeroesClient';
 
 export const metadata: Metadata = {
   title: 'Heroes',
-  description: '23-hero tier list with builds, pairings, and usage tips.',
+  description: 'Comprehensive 23-hero tier list for Last War: Survival with builds, hero pairings, synergies, and tactical usage tips for all event types.',
 };
 
 export default function HeroesPage() {

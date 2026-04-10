@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About the [ViKF] alliance knowledge base and leadership team.',
+  description: 'Learn about [ViKF] alliance on Last War: Survival Server #2058. Meet the leadership team led by Toxzin, explore our strategic playbook, and join our community on Discord.',
 };
 
 const aboutHeroIds = [
