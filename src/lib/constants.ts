@@ -133,6 +133,7 @@ export const BOTTOM_SHEET_GROUPS = [
     title: 'Tips',
     items: [
       { href: ROUTES.tips, label: 'Tips', icon: BookOpen },
+      { href: ROUTES.guides, label: 'Guides', icon: BookOpen },
       { href: ROUTES.glossary, label: 'Glossary', icon: LibraryBig },
       { href: ROUTES.season, label: 'Season', icon: Layers3 },
     ],
