@@ -25,12 +25,14 @@
 
 :root {
   color-scheme: dark;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-rajdhani: 'Rajdhani', system-ui, -apple-system, sans-serif;
 }
 
 body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-inter);
   min-height: 100vh;
   background-image:
     radial-gradient(circle at 1px 1px, rgba(212, 160, 23, 0.08) 1px, transparent 0),

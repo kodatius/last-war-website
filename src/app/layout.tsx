@@ -1,10 +1,6 @@
 import LayoutShell from '@/components/layout/LayoutShell';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import { Inter, Rajdhani } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const rajdhani = Rajdhani({ subsets: ['latin'], variable: '--font-rajdhani', weight: ['700'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vikfalliande.github.io/last-war-website'),
@@ -47,7 +43,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${rajdhani.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rajdhani:wght@700&display=swap" rel="stylesheet" />
+      </head>
       <body>
         <LayoutShell>{children}</LayoutShell>
       </body>
