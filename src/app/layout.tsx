@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vikfalliande.github.io/last-war-website'),
   title: {
     default: '[ViKF] Alliance - Last War Strategy Portal',
     template: '%s | [ViKF] Alliance',
